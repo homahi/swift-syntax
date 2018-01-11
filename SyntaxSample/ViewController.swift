@@ -103,6 +103,24 @@ class ViewController: UIViewController {
         print(seikyugaku)
         
 //        kingaku = (1080, "内税") タプルは型推論が行われ、それ以降は最初の宣言時の推論と同じものしか入れられない
+        
+        // 2-4:一般的なものは使わない
+        
+        //レンジ演算子
+        let rangeInt = -5..<5
+        print(rangeInt.contains(-3))
+        print(rangeInt.contains(2))
+        print(rangeInt.contains(5))
+        
+        let rangeDouble = 0.0...1.0
+        print(rangeDouble.contains(0.1))
+        print(rangeDouble.contains(1.0))
+        print(rangeDouble.contains(1.5))
+        
+        // 特にfor文で使うのが便利そう
+        for i in (1...5){
+            print("\(i)回目")
+        }
     }
 
     override func didReceiveMemoryWarning() {
