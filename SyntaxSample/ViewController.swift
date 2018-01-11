@@ -15,6 +15,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         print("ありがとう")
+        
+        //ステートメントの区切り
+        let ans = 14 + 25 + 36
+        print(ans)
+        
+        let ans1 = 14
+                        + 25
+                        + 36
+        print(ans1)
+        
+        let a = 10; let b = a + 20 ; print(b)
+        
+        // コメントを書くこともできる
+        /* 複数行も書ける
+            この辺は他の言語とあまり変わりがない
+        */
     }
 
     override func didReceiveMemoryWarning() {
