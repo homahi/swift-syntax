@@ -77,6 +77,32 @@ class ViewController: UIViewController {
         sansu = 67
         goukei = kokugo + sansu
         print(goukei)
+        
+        // 2-3:タプルを作る
+        
+        let product = ("Swift", 2014)
+        var kingaku = (1000,80)
+        var guest = ("大重","おおしげ", 1234)
+        
+        let data = (1000,80)
+        let (price1, tax) = data
+        let kingaku1 = price1 + tax
+        print(kingaku)
+        
+        // _を使って必要なものだけ受け取る
+        let (price2, _) = data
+        print(price2)
+        
+        // index番号でもアクセスできる
+        let price3 = data.0
+        let tax1 = data.1
+        print(price3+tax1)
+        
+        let kingaku2 = (price:1000, tax:80)
+        let seikyugaku = kingaku2.price + kingaku2.tax
+        print(seikyugaku)
+        
+//        kingaku = (1080, "内税") タプルは型推論が行われ、それ以降は最初の宣言時の推論と同じものしか入れられない
     }
 
     override func didReceiveMemoryWarning() {
