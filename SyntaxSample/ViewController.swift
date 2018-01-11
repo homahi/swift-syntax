@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var msg = "ハロー"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,16 +25,16 @@ class ViewController: UIViewController {
         print(ans)
         
         let ans1 = 14
-                        + 25
-                        + 36
+            + 25
+            + 36
         print(ans1)
         
         let a = 10; let b = a + 20 ; print(b)
         
         // コメントを書くこともできる
         /* 複数行も書ける
-            この辺は他の言語とあまり変わりがない
-        */
+         この辺は他の言語とあまり変わりがない
+         */
         
         /* command + /はコメント*/
         let msg1 = "おはよう"
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         let price:Double
         rate = 1.02
         price = 2500 * rate
-//        price = 1000 * rate ここでエラーになる
+        //        price = 1000 * rate ここでエラーになる
         
         // varは変数
         var var_name: String = "ビジター"
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
         let seikyugaku = kingaku2.price + kingaku2.tax
         print(seikyugaku)
         
-//        kingaku = (1080, "内税") タプルは型推論が行われ、それ以降は最初の宣言時の推論と同じものしか入れられない
+        //        kingaku = (1080, "内税") タプルは型推論が行われ、それ以降は最初の宣言時の推論と同じものしか入れられない
         
         // 2-4:一般的なものは使わない
         
@@ -121,13 +121,23 @@ class ViewController: UIViewController {
         for i in (1...5){
             print("\(i)回目")
         }
+        
+        // 2-5:if文
+        // カンマで区切ることができるらしい
+        
+        let if1 = 56
+        let if2 = 62
+        
+        if if1>=50, if2>=50, (if1+if2)>=120{
+            print("合格", )
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
