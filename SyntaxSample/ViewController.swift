@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var msg = "ハロー"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        print(msg)
         
         print("ありがとう")
         
@@ -48,6 +52,31 @@ class ViewController: UIViewController {
         let theNAME = "二郎"
         print(theNAME)
         print(theName)
+        
+        // 2-2: 定数、整数
+        // letは定数らしい、JavaScriptとは異なる
+        let name: String = "田中"
+        let width: Int = 56, height:Int = 75
+        
+        let rate:Double
+        let price:Double
+        rate = 1.02
+        price = 2500 * rate
+//        price = 1000 * rate ここでエラーになる
+        
+        // varは変数
+        var var_name: String = "ビジター"
+        var level: Int = 1, point: Int = 10 //,で続けて宣言できるらしい
+        var_name = "鈴木"
+        point = 50
+        
+        var kokugo:Int
+        var sansu:Int
+        var goukei:Int
+        kokugo = 56
+        sansu = 67
+        goukei = kokugo + sansu
+        print(goukei)
     }
 
     override func didReceiveMemoryWarning() {
