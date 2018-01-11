@@ -129,7 +129,97 @@ class ViewController: UIViewController {
         let if2 = 62
         
         if if1>=50, if2>=50, (if1+if2)>=120{
-            print("合格", )
+            print("合格" )
+        }
+        
+        // 2-6:switch文
+        // レンジ演算子で振り分けることができるのが良い
+        
+        for _ in 1...20{
+            let num = arc4random_uniform(50)
+            print("\(num)", terminator: "")
+            switch num{
+            case (10...15):
+                print(":交換 ", terminator: "")
+            case 20,(31...35),40:
+                print(":再検査 ", terminator: "")
+            default:
+                print(":合格 ", terminator: "")
+            }
+        }
+        
+        // タプルを利用した振り分け
+        let size = (6, 11)
+        switch size {
+        case (0,0):
+            print("幅高さ共に0です")
+        case (5...10, 5...10):
+            print("規定サイズです")
+        case (_,5...10):
+            print("高さ\(size.0)が規格外です")
+        case (5...10,_):
+            print("高さ\(size.1)が規格外です")
+        default:
+            print("幅高さ共に規格外です")
+        }
+        
+        // ヴァリューバインディング
+        let size1 = (6, 11)
+        switch size1 {
+        case (0,0):
+            print("幅高さ共に0です")
+        case (5...10, 5...10):
+            print("規定サイズです")
+        case (let width,5...10):
+            print("高さ\(width)が規格外です")
+        case (5...10,let height):
+            print("高さ\(height)が規格外です")
+        default:
+            print("幅高さ共に規格外です")
+        }
+        
+        // 値の振り分けに条件式を使う
+        // switchにはdefaultが必須らしい
+        let size2 = (45, 40, 100)
+        switch size2 {
+        case let (width, height, _) where (width>=60||(height>=60)):
+            print("規定外:幅高さのどちらかが60以上")
+        case let (_, _, weight) where (weight>=80):
+            print("規定外:幅高さのどちらかが60以上")
+        default:
+            print("規定サイズ内")
+        }
+        
+        // defaultを省略することができるらしい
+        let aPoint = (50,100)
+        switch aPoint {
+        case (0,0):
+            print("中心点です")
+        case (0,_):
+            print("x軸上の点です")
+        case (_,0):
+            print("y軸上の点です")
+        case let(x,y):
+            print("点(\(x),\(y))です")
+        }
+        
+        
+        // switchはbreak文を書かなくても良い
+        // fallthroughを用いることでJavaのswitch文のような用い方もできる
+        var abc = (a:false, b:false, c:false)
+        let fall = "b"
+        switch fall {
+        case "a":
+            abc.a = true
+            fallthrough
+        case "b":
+            abc.b = true
+            fallthrough
+        case "c":
+            abc.c = true
+            fallthrough
+        default:
+            print(abc)
         }
     }
     
