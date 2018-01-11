@@ -31,6 +31,23 @@ class ViewController: UIViewController {
         /* 複数行も書ける
             この辺は他の言語とあまり変わりがない
         */
+        
+        /* command + /はコメント*/
+        let msg1 = "おはよう"
+        let msg2 /*途中のコメント*/ = "おやすみなさい"
+        let msg3 = "さようなら"
+        print(msg1)
+        print(msg2)
+        print(msg1,msg2,msg3)
+        print(msg1,msg2,msg3,separator:"/")
+        print("blue", "green", separator:"+", terminator:"、")
+        print("yellow", terminator:"、")
+        print("red")
+        print("実行中:", #function)
+        let theName = "太郎"
+        let theNAME = "二郎"
+        print(theNAME)
+        print(theName)
     }
 
     override func didReceiveMemoryWarning() {
