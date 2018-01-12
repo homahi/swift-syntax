@@ -185,7 +185,7 @@ class ViewController: UIViewController {
         case let (width, height, _) where (width>=60||(height>=60)):
             print("規定外:幅高さのどちらかが60以上")
         case let (_, _, weight) where (weight>=80):
-            print("規定外:幅高さのどちらかが60以上")
+            print("規定外:重さが80以上")
         default:
             print("規定サイズ内")
         }
@@ -220,6 +220,41 @@ class ViewController: UIViewController {
             fallthrough
         default:
             print(abc)
+        }
+        
+        //2-7: for-in
+        for num in 5...9{
+            let value = num * 2
+            print(value, terminator: ",")
+        }
+        
+        for _ in 1...15{
+            let num = arc4random_uniform(100)
+            print(num, terminator:",")
+        }
+        
+        for i in 0...2 {
+            for j in 0...2 {
+                let point = (5*i, 10*j)
+                print("\(i)-\(j)回目 \(point)")
+            }
+        }
+        
+        let numList = [3,2,6,5,8,7,9]
+        var sum = 0
+        for num in numList{
+            sum += num
+        }
+        print("合計 \(sum)")
+        
+        // stringから順に取り出す
+        let message = "おもてなし"
+        for char in message {
+            print(char)
+        }
+        
+        for num in stride(from:10, to: 30, by:3){
+            print(num, terminator:",")
         }
     }
     
