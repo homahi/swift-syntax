@@ -277,6 +277,41 @@ class ViewController: UIViewController {
 //            total = a+b+c
 //        } while (total != 21)
 //        print("\(a),\(b),\(c)")
+        
+        // 2-9:continue/break
+        // 2-9:continue
+        let vlist = [3,5,-2,6,-8,2]
+        var total = 0
+        for v in vlist {
+            if v<0{
+                continue
+            }
+            total += v
+            print("\(v),")
+        }
+        print("合計:\(total)")
+        
+        // ループにラベルを付ける
+        xloop:for x in 0...3{
+            yloop:for y in 0...3{
+                if(x<y){
+                    print("------------")
+                    continue xloop
+                }
+                print((x,y))
+            }
+        }
+        
+        // 内側のループから外側のループをブレイクする
+        let list:Array = [[4,2],[5],[9,8,10],[6,8,-9],[4,2],[9,3]]
+        outloop:for alist in list{
+            inloop:for v in alist{
+                if v<0{
+                    print(alist)
+                    break outloop
+                }
+            }
+        }
 
     }
     
