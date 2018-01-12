@@ -366,19 +366,19 @@ class ViewController: UIViewController {
 //            let result = tanka * ninzu
 //            return result
 //        }
-//        
+//
 //        let price_ = price1(ninzu:5)
 //        print(price)
-//        
+//
 //        // 単価と人数を引数にする
 //        func price2(ninzu:Int, tanka:Int) -> Int{
 //            let result = tanka * ninzu
 //            return result
 //        }
-//        
+//
 //        let price_2 = price2(ninzu:3,tanka:1300)
 //        print(price)
-//        
+//
 //        // 引数の個数を指定しない
 //        func sum(numbers: Double...) -> Double{
 //            var total: Double = 0.0
@@ -387,17 +387,17 @@ class ViewController: UIViewController {
 //            }
 //            return total
 //        }
-//        
+//
 //        let goukei = sum(numbers: 5,6,7,8,9)
 //        print(goukei)
-//        
-//        
+//
+//
 //        // 引数に初期値を設定する
 //        func price3(tanka:Int, kosu:Int = 1, souryou:Int = 250) -> Int{
 //            let result = tanka * kosu + souryou
 //            return result
 //        }
-//        
+//
 //        let ex1 = price3(tanka:1000)
 //        print("\(ex1)円")
 //        let ex2 = price3(tanka:1000, kosu:2)
@@ -434,6 +434,27 @@ class ViewController: UIViewController {
         print(ans1)
         print(ans2)
         print(ans3)
+        
+        // 3-3:外部引数名を付ける
+        // 内部にはエイリアスが貼られる
+        func bmi(weight kg:Double, height cm:Double) -> Double{
+            if cm == 0 { return -1}
+            var result = kg/pow(cm*0.01, 2)
+            result = round(result*10)/10.0
+            return result
+        }
+        
+        let myBMI = bmi(weight: 56.0, height:172.5)
+        print(myBMI)
+        
+        // 引数名無しで値だけを入力できる関数
+        func triangleArea(_ width:Double, _ height:Double) -> Double{
+            let result = width * height / 2
+            return result
+        }
+        let area = triangleArea(30, 16.5)
+        print(area)
+
     }
     
     override func didReceiveMemoryWarning() {
