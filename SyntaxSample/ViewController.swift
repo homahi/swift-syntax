@@ -312,6 +312,53 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+        // 3-1:サイコロ関数
+        func dice() -> Int{
+            let number = 1 + arc4random_uniform(6)
+            return Int(number)
+        }
+        
+        print(dice())
+        
+        for _ in 1...5{
+            let num = dice()
+            print(num)
+        }
+        
+        func hello() -> Void{
+            print("ハロー")
+        }
+        
+        func thanks(num:Int){
+            if num <= 0{
+                return
+            }
+            print("\(num)個。ありがとうございました。")
+        }
+        
+        thanks(num:5)
+        thanks(num:0)
+        thanks(num:2)
+        
+        // guard-else文条件を満たさなかった時に実行される
+        // deferは最後に必ず実行される
+        
+        func half(num:Double){
+            defer{
+                print("計算終了")
+            }
+            guard num >= 10 else {
+                return
+            }
+            let halfNum = num/2
+            print("\(num)の半分は\(halfNum)")
+        }
+        
+        half(num:25)
+        half(num:9)
+        half(num:12)
+
 
     }
     
