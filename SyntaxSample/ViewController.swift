@@ -594,6 +594,81 @@ class ViewController: UIViewController {
         
         let a = cap("apple")
         let b = cap("APPLE")
+        
+        // ストリングの比較と検索
+        
+        // ストリングを比較する
+        //let str0 = "Swift入門"
+        //let str1 = "SWIFT入門"
+        //let str2 = "Swift"+"入門"
+        //
+        //if str0 == str1{
+        //    print("str0とstr1は同じです")
+        //} else {
+        //    print("str0とstr1は同じではありません")
+        //}
+        //if str0 == str2{
+        //    print("str0とstr2は同じです")
+        //} else {
+        //    print("str0とstr2は同じではありません")
+        //}
+        
+        //どちらのストリングが大きいか比べる
+        //let str1 = "iPad"
+        //let str2 = "iPhone"
+        //
+        //if str1>str2{
+        //    print("\(str1)のほうが\(str2)より大きい")
+        //} else if str1<str2{
+        //    print("\(str2)のほうが\(str1)より大きい")
+        //}else{
+        //    print("\(str1)と\(str2)は同じ")
+        //}
+        
+        // 前方一致、後方一致
+        //let itemList = ["カツ丼", "カツカレー", "親子丼", "天丼"]
+        //var menu1 = [String]()
+        //var menu2 = [String]()
+        //for item in itemList{
+        //    if item.hasPrefix("カツ"){
+        //        menu1.append(item)
+        //    }
+        //    if item.hasSuffix("丼"){
+        //        menu2.append(item)
+        //    }
+        //}
+        //print(menu1)
+        //print(menu2)
+        
+        // ストリングが含まれているかどうか
+        //let str1 = "吾輩は黒猫である。"
+        //let str2 = "黒猫"
+        //if str1.contains(str2){
+        //    print("「\(str2)」が含まれています")
+        //} else{
+        //    print("「\(str2)」は含まれていません。")
+        //}
+        
+        // 見つかった範囲の後ろを取り出す
+        // ifとstrの組み合わせみたいな書き方できるんだね、この辺はscalaに近いかな。
+        //let str = "東京都千代田区神雨1-2-3"
+        //let result = str.range(of: "東京都")
+        //if let theRange = result {
+        //    let afterStr = str[theRange.upperBound...]
+        //    print(afterStr)
+        //} else {
+        //    print(str)
+        //}
+        
+        // 見つかった範囲の削除
+        //var str = "東京都千代田区神南1-2-3"
+        //let result = str.range(of: "東京都")
+        //if let theRange = result {
+        //    str.removeSubrange(theRange)
+        //}
+        //print(str)
+        
+
     }
     
     override func didReceiveMemoryWarning() {
