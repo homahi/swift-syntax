@@ -683,6 +683,62 @@ class ViewController: UIViewController {
         //print(basicCourse)
         //print(fullCourse)
 
+        
+        // 5-2配列から値を取り出す、スライスする
+        //
+        //let abcArray = ["a","b","c", "d"]
+        //let str1 = abcArray[0]
+        //let str2 = abcArray[2]
+        //print(str1)
+        //print(str2)
+        //
+        //
+        //let colorList = ["blue", "yellow", "red", "green", "pink"]
+        //let myColor = colorList[1...3]
+        //print(myColor)
+        //
+        //let names = ["佐藤", "鈴木", "青木", "栗田", "篠原"]
+        //let half = names.count/2
+        //let group1 = names[..<half]
+        //let group2 = names[half...]
+        //print(group1)
+        //print(group2)
+        //
+        //// 配列の中身を書き換える
+        //var theArray = ["a","b","c","d","e","f","g","h","i"]
+        //theArray[0] = "あ"
+        //theArray[2] = "いう"
+        //theArray[4...6] = ["赤","白", "黄色", "青", "緑"]
+        //print(theArray)
+        
+        // 配列からインデックス番号と値を取り出す
+        //let colorList = ["blue", "yellow", "red", "green"]
+        //for (index, value) in colorList.enumerated(){
+        //    print((index, value))
+        //}
+        
+        // 最初の値と最後の値を取り出す
+        // firstやlastの場合は未定義の場合もIndexエラーにならないみたい。これはこれで面白い。
+        //let emptyArray = [Int]()
+        //let abcArray = ["a","b","c","d"]
+        //
+        //if let item = emptyArray.first{
+        //    print(item)
+        //}
+        //if let item = abcArray.last {
+        //    print(item)
+        //}
+        //
+        //// 配列の値を検索
+        //let color = "yellow"
+        //let colors = ["blue", "yellow", "pink"]
+        //let indexNo = colors.index(of:color)
+        //if indexNo == nil {
+        //    print("\(color)は見つかりませんでした。")
+        //}else{
+        //    print("\(color)はインデックス番号\(indexNo!)にありました。")
+        //}
+
 
     }
     
