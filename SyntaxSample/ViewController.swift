@@ -454,6 +454,89 @@ class ViewController: UIViewController {
         }
         let area = triangleArea(30, 16.5)
         print(area)
+        
+        // 4-1:ストリング処理
+        let message = "ハロー"
+        var bird: String
+        bird = "アマツバメ"
+        
+        let message1 = """
+1日目はサイクリング
+2日目は釣り
+"""
+        
+        let hello = String("ハロー") + String(2000+20)
+        
+        // 空文字列であることの判定
+        
+        func hello(_ who:String) {
+            if who.isEmpty{
+                return
+            }
+            let msg = "ハロー!" + who + "さん"
+            print(msg)
+        }
+        
+        hello("")
+        hello("田中")
+        
+        // String(repeating:,count:)で繰り返し表現ができる
+        let stars = String(repeating:" ★ ", count:10)
+        print(stars)
+        
+        
+        // 特殊文字
+        let swift = "Swiftとは\n\"アマツバメ\"です。"
+        print(swift)
+        
+        // 文字カウント
+        let str_count = "あいうえお12345ABcde(^_^)"
+        let num = str_count.count
+        print(num)
+        
+        // ストリングに変数や式を含める
+        let entries = 24
+        let staff = 3
+        let str3 = "参加者\(entries)人。"
+        let str4 = "スタッフを含めると\(entries + staff)人です"
+        print(str3)
+        print(str4)
+        
+        // ストリングを連結する
+        let name1 = "海原"
+        let name2 = "次郎丸"
+        let str5 = name1 + name2 + "さん"
+        print(str5)
+        
+        // +=演算子でストリングを連結する
+        let week = ["日", "月", "火", "水", "木", "金", "土"]
+        var oneweek = ""
+        for day in week{
+            oneweek += day
+        }
+        print(oneweek)
+        
+        // ストリングを数値に変換する
+        let kakaku:String = "240"
+        let kosu:String = "2"
+        let kingaku = Int(kakaku)! * Int(kosu)!
+        print(kingaku)
+        
+        // ストリングを小数に変換して計算する
+        // Swiftには!をつけることでOptionalをアンラップする機能があるらしい。この辺はJavaと一緒だね。
+        let r = "20"
+        let pi = "3.14"
+        let menseki = Double(r)! * Double(r)! * Double(pi)!
+        print("半径\(r)の面積は\(menseki)")
+        
+        // 数値をストリングに変換する
+        let nakami = 135.5
+        let package = 12.0
+        let str1 = "内容量:" + String(nakami) + "g"
+        let str2 = "総重量:" + (nakami + package).description + "g"
+        print(str1)
+        print(str2)
+
 
     }
     
