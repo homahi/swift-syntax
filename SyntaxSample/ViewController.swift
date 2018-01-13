@@ -667,7 +667,22 @@ class ViewController: UIViewController {
         //    str.removeSubrange(theRange)
         //}
         //print(str)
-        
+       
+        //// 配列を同じ値で初期化する
+        //
+        //let zeroList = [Double](repeating:0.0, count:10)
+        //let xList = [String](repeating:"未設定", count:5)
+        //
+        //// 連番配列を作る
+        //let numbers = [Int](-3...3)
+        //print(numbers)
+        //
+        ////配列の連結
+        //let basicCourse = ["ラン", "スイム"]
+        //let fullCourse = basicCourse + ["バイク", "カヌー"]
+        //print(basicCourse)
+        //print(fullCourse)
+
 
     }
     
