@@ -537,7 +537,63 @@ class ViewController: UIViewController {
         print(str1)
         print(str2)
 
-
+        // 4-2:ストリングから文字を取り出す
+        // 先頭文字を抜き出す
+        let str = "Swift入門ノート"
+        let start = str.startIndex
+        let end = str.endIndex
+        let char = str[start]
+        print(char)
+        
+        // 1つ先のインデックス
+        var index = str.startIndex
+        index = str.index(after: index)
+        let chr = str[index]
+        print(chr)
+        
+        // 1つ手間のインデックス
+        var end_index = str.endIndex
+        end_index = str.index(before: end_index)
+        let chr_af = str[end_index]
+        print(chr_af)
+        
+        // 指定の位置の文字を取り出す
+        let index1 = str.index(str.startIndex, offsetBy: 5)
+        let index2 = str.index(str.endIndex, offsetBy: -4)
+        
+        let chr1 = str[index1]
+        let chr2 = str[index2]
+        print((chr1, chr2))
+        
+        // レンジ演算子でインデックスの範囲を作る
+        let zero = str.startIndex
+        let range_start = str.index(zero, offsetBy:3)
+        let range_end = str.index(zero, offsetBy:6)
+        let str1 = str[range_start...range_end]
+        let str2 = str[range_start..<range_end]
+        print((str1, str2))
+        
+        // インデックスの位置で分割する
+        let half = str.count / 2
+        let half_index = str.index(str.startIndex, offsetBy: half)
+        let mae = str[..<half_index]
+        let ushiro = str[half_index...]
+        print(mae)
+        print(ushiro)
+        
+        // 先頭文字を大文字にする
+        func cap(_ str:String) -> String{
+            let start = str.startIndex
+            let chr = str[start]
+            let str1 = String(chr)
+            let second = str1.index(after: start)
+            let str2 = str[second...]
+            let capStr = str1.uppercased() + str2.lowercased()
+            return capStr
+        }
+        
+        let a = cap("apple")
+        let b = cap("APPLE")
     }
     
     override func didReceiveMemoryWarning() {
