@@ -10,6 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var members = [String:Int]()
+    
+    func updateMembers(theKey:String, newValue:Int){
+        if let oldValue = members.updateValue(newValue, forKey: theKey){
+            print("\(theKey)の値を\(oldValue)から\(newValue)に更新しました。")
+        }else{
+            print("\(theKey):\(newValue)を追加しました。")
+        }
+        print(members)
+    }
+    
     var msg = "ハロー"
     
     override func viewDidLoad() {
@@ -835,6 +846,12 @@ class ViewController: UIViewController {
         //let c = ("C",1)
         //let abcDic = Dictionary(dictionaryLiteral: a,b,c)
         //print(abcDic)
+        
+        // updateValueで値の追加、更新を行う.
+        
+        // 辞書の複製
+        
+
     }
     
     override func didReceiveMemoryWarning() {
