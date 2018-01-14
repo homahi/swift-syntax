@@ -893,6 +893,57 @@ class ViewController: UIViewController {
         //print(theRace)
 
         
+        //let colorSet: Set<String> = ["red", "green", "blue", "green"]
+        //print(colorSet)
+        //print(type(of: colorSet))
+        
+        // 配列からセットを作る
+        //var colorArray = ["red", "green", "blue", "green"]
+        //print(colorArray, type(of:colorArray))
+        //let colorSet = Set(colorArray)
+        //colorArray = Array(colorSet)
+        //
+        //print(colorSet, type(of:colorSet))
+        //print(colorArray, type(of:colorArray))
+        
+        // 空のセットを作る
+        //var numSetA:Set<Int> = []
+        //var charsSetB = Set<Character>()
+        
+        // セットに値を追加する
+        //var numSetA:Set<Int> = []
+        //numSetA.insert(3)
+        //numSetA.insert(6)
+        //numSetA.insert(7)
+        //numSetA.insert(3)
+        //numSetA.insert(3)
+        //print(numSetA)
+        
+        // セットの値を削除する
+        //var colorSet: Set = ["red", "yellow", "black", "green"]
+        //if let theColor = colorSet.remove("black"){
+        //    print("\(theColor)を取り除きました。")
+        //}else{
+        //    print("セットの変化はありません。")
+        //}
+        //print(colorSet)
+        
+        // セットの値の個数を調べる
+        //let numSet:Set<Int> = [10,20,30,40,50]
+        //if numSet.isEmpty{
+        //    print("numSetは空です。")
+        //} else{
+        //    print("numSetには\(numSet.count)個の値が入っています。")
+        //}
+        
+        //let lunchSet:Set = ["カレー", "ナン", "チャイ"]
+        //let member = "チャイ"
+        //if lunchSet.contains(member){
+        //    print("セットには\(member)が含まれています。")
+        //}else{
+        //    print("セットには\(member)は含まれていません。")
+        //}
+
 
     }
     
