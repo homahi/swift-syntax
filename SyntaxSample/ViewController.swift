@@ -944,6 +944,43 @@ class ViewController: UIViewController {
         //    print("セットには\(member)は含まれていません。")
         //}
 
+        //var aSet:Set<String> = ["リンゴ", "みかん", "桃", "イチゴ"]
+        //var bSet:Set<String> = ["イチゴ", "スイカ", "みかん", "バナナ"]
+        //var cSet = aSet.union(bSet)
+        //aSet.intersection(bSet);
+        //aSet.subtracting(bSet);
+        //aSet.symmetricDifference(bSet)
+        
+        //let aSet:Set<Int> = [5, 6, 7, 8]
+        //let bSet:Set<Int> = [7, 8, 5, 6]
+        //let cSet:Set<Int> = [4, 5, 6, 7]
+        //print(aSet == bSet)
+        //print(aSet != cSet)
+        
+        //let aSet:Set<Int> = [5, 6, 7, 8]
+        //let bSet:Set<Int> = [1, 8, 2, 5]
+        //if aSet.isDisjoint(with: bSet){
+        //    print("aSetとbSetには共通した値が１つもありません。")
+        //}else{
+        //    print("aSetとbSetには共通した値があります。")
+        //    print(aSet.intersection(bSet))
+        //}
+        
+        //let aSet:Set<String> = ["a", "b", "c", "d"]
+        //let bSet:Set<String> = ["a",  "c"]
+        //if bSet.isSubset(of: aSet){
+        //    print("bSetはaSetのサブセットです。")
+        //}else{
+        //    print("bSetはaSetのサブセットではありません。")
+        //}
+        //let aSet:Set<String> = ["a", "b", "c", "d"]
+        //let bSet:Set<String> = ["a",  "c"]
+        //if aSet.isSuperset(of: bSet){
+        //    print("aSetはbSetのスーパーセットです")
+        //}else{
+        //    print("aSetはbSetのスーパーセットではありません")
+        //}
+
 
     }
     
