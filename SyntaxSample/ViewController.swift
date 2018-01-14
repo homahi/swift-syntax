@@ -738,8 +738,103 @@ class ViewController: UIViewController {
         //}else{
         //    print("\(color)はインデックス番号\(indexNo!)にありました。")
         //}
+        
+        //var colors = ["red", "green"]
+        //colors.append("yellow")
+        //colors.append(contentsOf: ["black", "white"])
+        //print(colors)
+        //
+        //// 配列の値を追加する
+        //var aList = ["a", "b", "c", "d"]
+        //aList.insert("XYZ", at: 2)
+        //print(aList)
+        //
+        ////配列の値を削除する
+        //var colorArray = ["red", "blue", "green", "black", "white"]
+        //let delColor = colorArray.remove(at: 2)
+        //print("\(delColor)を削除しました。\(colorArray)")
+        //
+        //// 配列から最初の値を削除する
+        //
+        //var colorArray = ["red", "blue", "green", "black", "white"]
+        //let delColor = colorArray.removeFirst()
+        //print("\(delColor)を削除しました。\(colorArray)")
+        //colorArray.removeLast()
+        //colorArray.removeAll()
+        //
+        //// Swiftで配列のコピーは実質ディープコピーとして扱われ、完全に別のオブジェクトとして扱われる。
+        //// 内部的にはレイジーコピーと呼ばれ、変更が行われるまではシャローコピー、変更する瞬間にディープコピーを行う。多分パフォーマンスの問題なんだと思う。
+        //var array1 = [1,2,3]
+        //let array2 = array1
+        //array1[0] = 99
+        //print("array1 \(array1)")
+        //print("array2 \(array2)")
 
 
+        // 5-4: ソート、フィルタ、マップ
+        
+        //var ageArray = [34,23,31,26,28,22]
+        //ageArray.sort()
+        //print(ageArray)
+        //
+        //// ソート済みの配列を新規に作る
+        //// .sortは中身を変更、sortedは新規に作成
+        //let fruit = ["orange", "apple", "pineapple", "banana"]
+        //let fruitSorted = fruit.sorted()
+        //print(fruit)
+        //print(fruitSorted)
+        //
+        //
+        //// 値を条件抽出する
+        //let age30to39 = ageArray.filter({(age:Int) -> Bool in
+        //    return (age>=30)&&(age<40)
+        //})
+        //print(age30to39)
+        //
+        //// 値を使って演算する
+        //let numbers = [10, 20, 30, 40]
+        //let plusOnes = numbers.map({(num:Int) -> Int in
+        //    return num + 1
+        //})
+        //print(plusOnes)
+        //the
+        
+        // Section6-1
+        // 辞書を作る
+        
+        //let sizeTable = ["S":47, "M":52, "L":55]
+        //let numDic = [10:"a", 20:"b", 30:"c"]
+        //let resultDic = ["A":true, "B":false, "C":true]
+        //let pointDic = ["p1":(10,20), "p2":(30,50), "p3":(20,40)]
+        
+        // 値の型を指定した辞書
+        //let sizeTable:[String:Int] = ["S":47, "M":52, "L": 55]
+        //let resultDic:[String:Bool] = ["A":true, "B":false, "C":true]
+        //let pointDic:[String:(Int,Int)] = ["p1":(10,20), "p2":(30,50), "p3":(20,40)]
+        //var theUser:[String:Any]
+        //theUser = ["名前":"青井", "年齢":29, "得点":[67,82]]
+        
+        //var pointDic:Dictionary<String, (Int,Int)>
+        //pointDic = ["p1":(10,20), "p2":(30,50), "p3":(20,40)]
+        
+        
+        //// 空の辞書
+        ////var sizeTable: [String:Int] = [:]
+        //var sizeTable = [String:Int]()
+        //
+        //// 辞書が空かどうかを調べる
+        //if sizeTable.isEmpty{
+        //   print("theDicは空の辞書")
+        //} else{
+        //   print(sizeTable)
+        //}
+        //
+        //// タプルから辞書を作る
+        //let a = ("A",1)
+        //let b = ("B",2)
+        //let c = ("C",1)
+        //let abcDic = Dictionary(dictionaryLiteral: a,b,c)
+        //print(abcDic)
     }
     
     override func didReceiveMemoryWarning() {
