@@ -981,6 +981,95 @@ class ViewController: UIViewController {
         //    print("aSetはbSetのスーパーセットではありません")
         //}
 
+        // オプショナルバリューがnilの場合に対応する
+        
+        //var count:Int?
+        //var price:Int
+        //
+        //price = 250 * (count ?? 2)
+        //print("\(price)円です。")
+        //
+        //count = 3
+        //price = 250 * (count ?? 2)
+        //print("\(price)円です。")
+        //
+        //var nameArray:[String] = []
+        //let userName:String = nameArray.first ?? "名無し"
+        //print(userName)
+        
+        //var str:String?
+        //str = "Swift"
+        //if let msg = str{
+        //    print(msg + "ワールド")
+        //}else{
+        //    print("ハローワールド")
+        //}
+        
+        // 辞書の値のうちで数値だけを合算する
+        
+        //var sum = 0
+        //let dic:[String:Int?] = ["a":23, "b":nil, "c":10, "d":nil]
+        //for(_, value) in dic{
+        //    if let num = value{
+        //        sum += num
+        //    }
+        //}
+        //print("数値の合計は\(sum)")
+        //
+        //
+        
+        //var str:String? = "★☆"
+        //var repeatString:String = ""
+        //var i = 0
+        //while let stamp = str{
+        //    repeatString += stamp
+        //    i += 1
+        //    if (i >= 10){
+        //       break
+        //    }
+        //}
+        //print(repeatString)
+        
+        //let who = "サクラ"
+        //var level:Int?
+        //
+        //func hello(){
+        //    guard let theLevel = level else{
+        //        return
+        //    }
+        //
+        //    if theLevel<10{
+        //        print("ハロー、" + who + "隊員")
+        //    } else{
+        //        print("ハロー、" + who + "上級隊員")
+        //    }
+        //}
+        //hello()
+        //level = 12
+        //hello()
+        
+        //let year1:String = "2001"
+        //let year2:String = "2016"
+        //if let startYear = Int(year1), let endYear=Int(year2), startYear < endYear{
+        //    let years = endYear - startYear
+        //    print("\(years)年間です")
+        //}
+        
+        //var balls:[(size:Int, color:String)] = []
+        //var ballSize = balls.first?.size
+        //print(ballSize)
+        //
+        //balls = [(size:2, color:"red"), (size:4, color:"green")]
+        //ballSize = balls.first?.size
+        //print(ballSize)
+        
+        // オプショナルチェーンとオプショナルバインディングを組み合わせる
+        //var balls:[(size:Int, color:String)] = []
+        //balls = [(size:2, color:"red"), (size:4, color:"green")]
+        //if let ballSize = balls.first?.size{
+        //    print(ballSize)
+        //}
+
 
     }
     
