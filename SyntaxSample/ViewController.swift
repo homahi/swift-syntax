@@ -1069,7 +1069,21 @@ class ViewController: UIViewController {
         //if let ballSize = balls.first?.size{
         //    print(ballSize)
         //}
-
+//        class MyClass{
+//            var msg = "ハロー"
+//            func hello(){
+//                print(msg)
+//            }
+//        }
+//
+//        let myObj = MyClass()
+//        myObj.msg
+//        myObj.msg = "はーい！元気？"
+//        myObj.hello()
+        
+        let myObj = MyClass()
+        // importとかしないでも呼び出せるらしい
+        myObj.hello()
 
     }
     
