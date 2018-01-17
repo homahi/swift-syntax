@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MyClass {
+internal class MyClass {
     static var radian:Double = 0.0
     
     class var degree:Double{
@@ -75,5 +75,16 @@ class Car{
 class Message{
     class func hello() -> String {
         return "こんにちは"
+    }
+}
+
+class Game{
+    fileprivate var point = 0.0
+    
+    fileprivate(set) var level = 0
+    
+    func addPoint(value:Double){
+        point += value
+        level = Int(floor(point/3))
     }
 }
