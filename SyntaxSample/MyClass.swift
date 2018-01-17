@@ -83,3 +83,23 @@ class MyGame:GameProtocol{
         print("ミスった!半減")
     }
 }
+
+enum Direction: Int {
+    case forward = 1
+    case backword
+    case right
+    case left
+}
+
+enum Pattern {
+    case Monotone(_:PColor)
+    case Border(color1: PColor, color2:PColor)
+    case Dots(base:PColor, dot1:PColor, dot2:PColor)
+}
+
+enum PColor: String{
+    case red = "赤"
+    case green = "緑"
+    case yellow = "黄"
+    case white = "白"
+}
