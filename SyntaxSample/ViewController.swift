@@ -8,28 +8,37 @@
 
 import UIKit
 
-extension UIColor{
-    class var wakakusa:UIColor{
-        return UIColor(red:0.6706, green:0.7882, blue:0.0, alpha: 1)
-    }
-    
-    class var beniaka:UIColor{
-        return UIColor(red: 0.898, green:0.0, blue:0.3098, alpha:1)
-    }
+enum MensSize {
+    case S
+    case M
+    case L
+    case XL
+}
+
+enum WomensSize {
+    case XS, S, M, L
 }
 
 class ViewController: UIViewController {
     
+    func packing(size:WomensSize) -> String{
+        var stuff: String
+        switch size{
+        case .XS, .S:
+            stuff = "女性用XS, Sサイズ備品"
+        case .M:
+            stuff = "女性用Mサイズ備品"
+        case .L:
+            stuff = "女性用Lサイズ備品"
+        }
+        return stuff
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myGameObj = MyGame()
-        myGameObj.hit()
-        print(myGameObj.gamePoint)
-        myGameObj.miss()
-        print(myGameObj.gamePoint)
-        myGameObj.hit()
-        print(myGameObj.gamePoint)
+        let theStuff = packing(size: .M)
+        print(theStuff)
     }
     
     override func didReceiveMemoryWarning() {
