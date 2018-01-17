@@ -23,14 +23,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let color1 = UIColor.red
-        let color2 = UIColor.wakakusa
-        let color3 = UIColor.beniaka
-        
-        view.backgroundColor = color3
-        print(color1)
-        print(color2)
-        print(color3)
+        let myGameObj = MyGame()
+        myGameObj.hit()
+        print(myGameObj.gamePoint)
+        myGameObj.miss()
+        print(myGameObj.gamePoint)
+        myGameObj.hit()
+        print(myGameObj.gamePoint)
     }
     
     override func didReceiveMemoryWarning() {

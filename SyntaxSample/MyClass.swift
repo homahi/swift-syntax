@@ -78,13 +78,22 @@ class Message{
     }
 }
 
-class Game{
-    fileprivate var point = 0.0
+class MyGame:GameProtocol{
+    private var total = 0
     
-    fileprivate(set) var level = 0
+    var gamePoint:Int{
+        get{
+            return total
+        }
+    }
     
-    func addPoint(value:Double){
-        point += value
-        level = Int(floor(point/3))
+    func hit(){
+        total += 10
+        print("ヒットしました。 +10")
+    }
+    
+    func miss(){
+        total /= 2
+        print("ミスった!半減")
     }
 }
