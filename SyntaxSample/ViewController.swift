@@ -8,15 +8,29 @@
 
 import UIKit
 
+extension UIColor{
+    class var wakakusa:UIColor{
+        return UIColor(red:0.6706, green:0.7882, blue:0.0, alpha: 1)
+    }
+    
+    class var beniaka:UIColor{
+        return UIColor(red: 0.898, green:0.0, blue:0.3098, alpha:1)
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let obj = Player()
-        obj.who = "海子"
-        obj.hello()
-        obj.bye()
+        let color1 = UIColor.red
+        let color2 = UIColor.wakakusa
+        let color3 = UIColor.beniaka
+        
+        view.backgroundColor = color3
+        print(color1)
+        print(color2)
+        print(color3)
     }
     
     override func didReceiveMemoryWarning() {
