@@ -25,15 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myObj = MyClass(msg:"こんにちは")
-        // importとかしないでも呼び出せるらしい
-        myObj.hello()
-        
-        let myObj2 = MyClass(msg: "こんにちは", name:"桜子")
+        let myObj1 = MyClass()
+        let myObj2 = MyClass(msg: "こんにちは")
+        let myObj3 = MyClass(msg: "やあ！", name:"山田")
+        myObj1.hello()
         myObj2.hello()
-        
-        let obj3 = MyClass()
-        obj3.hello()
+        myObj3.hello()
 
     }
     
