@@ -14,16 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let myCircle = Circle()
-        print("半径\(myCircle.radius)")
-        print("面積\(myCircle.area)")
-
-        myCircle.area *= 2
-        print("半径\(myCircle.radius)")
-        print("面積\(myCircle.area)")
-        
-        myCircle.radius = 3.0
-        print("半径\(myCircle.radius)")
-        print("面積\(myCircle.area)")
+        myCircle.radius = 10
+        let menseki = myCircle.area
+        print(menseki)
     }
     
     override func didReceiveMemoryWarning() {
