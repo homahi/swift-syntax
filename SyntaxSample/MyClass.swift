@@ -71,3 +71,9 @@ class Car{
         }
     }
 }
+
+class Message{
+    class func hello() -> String {
+        return "こんにちは"
+    }
+}
