@@ -13,14 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let player1 = Game()
-        let player2 = Game()
-        
-        player1.addPoint(value:5)
-        player2.addPoint(value:7)
-        
-        print("player1: レベル \(player1.level)")
-        print("player2: レベル \(player2.level)")
+        let obj = Player()
+        obj.who = "海子"
+        obj.hello()
+        obj.bye()
     }
     
     override func didReceiveMemoryWarning() {

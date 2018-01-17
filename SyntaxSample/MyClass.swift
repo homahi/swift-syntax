@@ -32,25 +32,25 @@ class Circle{
 }
 
 class Player {
-    var times = 0
-    var level:Int {
-        willSet{
-            print("-------------")
-            print("willSet \(newValue)")
+    var name: String = ""
+    
+    func hello(){
+        print("やあ!" + name)
+    }
+}
+
+extension Player{
+    var who:String{
+        get{
+            return name
         }
-        didSet{
-            if oldValue != level{
-                times += 1
-                print("\(times)回目の更新")
-                print("\(oldValue) -> \(level)")
-            } else{
-                print("値は変化なし")
-            }
+        set(value){
+            name = value
         }
     }
     
-    init(){
-        level = 0
+    func bye(){
+        print("またね!" + name)
     }
 }
 
