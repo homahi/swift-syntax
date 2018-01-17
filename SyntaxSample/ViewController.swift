@@ -8,37 +8,31 @@
 
 import UIKit
 
-enum MensSize {
-    case S
-    case M
-    case L
-    case XL
+enum Season{
+    case Spring, Summer, Autumn, Winter
 }
 
-enum WomensSize {
-    case XS, S, M, L
+class MyClass{
+    let kisetsu = Season.Autumn
+    func sukinaKisetsu() -> Season{
+        return kisetsu
+    }
 }
 
 class ViewController: UIViewController {
     
-    func packing(size:WomensSize) -> String{
-        var stuff: String
-        switch size{
-        case .XS, .S:
-            stuff = "女性用XS, Sサイズ備品"
-        case .M:
-            stuff = "女性用Mサイズ備品"
-        case .L:
-            stuff = "女性用Lサイズ備品"
-        }
-        return stuff
+    enum Grade{
+        case Matsu, Take, Ume
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let theStuff = packing(size: .M)
-        print(theStuff)
+        let kisetsu = Season.Winter
+        let gradeType = Grade.Matsu
+        print(kisetsu)
+        print(gradeType)
+        
     }
     
     override func didReceiveMemoryWarning() {

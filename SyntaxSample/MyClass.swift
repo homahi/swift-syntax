@@ -8,20 +8,6 @@
 
 import Foundation
 
-internal class MyClass {
-    static var radian:Double = 0.0
-    
-    class var degree:Double{
-        get{
-            let dosu = radian * 90 / Double.pi
-            return dosu
-        }
-        
-        set(dosu){
-            radian = dosu * Double.pi / 90
-        }
-    }
-}
 
 class Circle{
     var radius: Double = 1.0
