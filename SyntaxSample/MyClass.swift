@@ -9,29 +9,17 @@
 import Foundation
 
 class MyClass {
-
-    let msg :String
-    let name:String?
+    static var radian:Double = 0.0
     
-    //初期値を入力することもできるらしい
-    init(msg:String ,name: String){
-        self.msg = msg
-        self.name = name
-    }
-    
-    // 別のコンストラクタを呼び出すようなコンストラクタは前にconvenienceをつけるらしい。
-    convenience init (msg: String = "ハロー"){
-        self.init(msg:msg,name:"匿名")
-    }
-
-    func hello(){
-        var helloMsg: String
-        if let user = name{
-            helloMsg = user + "さん。" + msg
-        } else{
-            helloMsg = msg
+    class var degree:Double{
+        get{
+            let dosu = radian * 90 / Double.pi
+            return dosu
         }
-        print(helloMsg)
+        
+        set(dosu){
+            radian = dosu * Double.pi / 90
+        }
     }
 }
 
