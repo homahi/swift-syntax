@@ -9,9 +9,28 @@
 import Foundation
 
 class MyClass {
-    let msg = "ハロー"
+
+    let msg :String
+    let name:String?
+    
+    //初期値を入力することもできるらしい
+    init(msg:String = "ハロー"){
+        self.msg = msg
+        self.name = nil
+    }
+    
+    init(msg:String = "ハロー", name:String){
+        self.msg = msg
+        self.name = name
+    }
     
     func hello(){
-        print(msg)
+        var helloMsg: String
+        if let user = name{
+            helloMsg = user + "さん。" + msg
+        } else{
+            helloMsg = msg
+        }
+        print(helloMsg)
     }
 }
