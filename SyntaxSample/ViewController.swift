@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myCircle = Circle()
-        myCircle.radius = 10
-        let menseki = myCircle.area
-        print(menseki)
+        let thePlayer = Player()
+        thePlayer.level = 10
+        thePlayer.level = 10
+        thePlayer.level = 15
     }
     
     override func didReceiveMemoryWarning() {
