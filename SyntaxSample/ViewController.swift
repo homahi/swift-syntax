@@ -10,28 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var members = [String:Int]()
-    
-    func updateMembers(theKey:String, newValue:Int){
-        if let oldValue = members.updateValue(newValue, forKey: theKey){
-            print("\(theKey)の値を\(oldValue)から\(newValue)に更新しました。")
-        }else{
-            print("\(theKey):\(newValue)を追加しました。")
-        }
-        print(members)
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myCircle = Circle()
+        print("半径\(myCircle.radius)")
+        print("面積\(myCircle.area)")
 
-        let myObj1 = MyClass()
-        let myObj2 = MyClass(msg: "こんにちは")
-        let myObj3 = MyClass(msg: "やあ！", name:"山田")
-        myObj1.hello()
-        myObj2.hello()
-        myObj3.hello()
-
+        myCircle.area *= 2
+        print("半径\(myCircle.radius)")
+        print("面積\(myCircle.area)")
+        
+        myCircle.radius = 3.0
+        print("半径\(myCircle.radius)")
+        print("面積\(myCircle.area)")
     }
     
     override func didReceiveMemoryWarning() {

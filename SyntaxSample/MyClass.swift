@@ -34,3 +34,16 @@ class MyClass {
         print(helloMsg)
     }
 }
+
+class Circle{
+    var radius: Double = 1.0
+    var area: Double {
+        get {
+            return radius * radius * Double.pi
+        }
+        set(menseki){
+            radius = sqrt(menseki / Double.pi)
+        }
+    }
+    
+}
