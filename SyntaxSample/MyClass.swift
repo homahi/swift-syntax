@@ -65,3 +65,21 @@ class Player {
         level = 0
     }
 }
+
+class Car{
+    static var count = 0
+    
+    var moving = false
+    
+    func start(){
+        Car.count += 1
+        moving = true
+    }
+    
+    func stop(){
+        if Car.count > 0{
+            Car.count -= 1
+            moving = false
+        }
+    }
+}

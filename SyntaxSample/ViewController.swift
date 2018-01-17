@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let thePlayer = Player()
-        thePlayer.level = 10
-        thePlayer.level = 10
-        thePlayer.level = 15
+        let car1 = Car()
+        let car2 = Car()
+        print("動いている車は\(Car.count)台")
+        car1.start()
+        car2.start()
+        print("動いている車は\(Car.count)台")
+        car2.stop()
+        print("動いている車は\(Car.count)台")
     }
     
     override func didReceiveMemoryWarning() {
