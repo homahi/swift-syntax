@@ -10,22 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct ColorBox {
-        var width: Int
-        var height: Int
-        var color : String
+    struct Ball {
+        static let madein = "日本"
+        static var sozai = "紙"
+        var radius: Double = 10.0
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var redbox = ColorBox(width: 100, height:100, color: "red")
-        print("幅\(redbox.width)、高さ\(redbox.height)、色\(redbox.color)")
-        
-        redbox.width = 90
-        redbox.color = "blue"
-        print("幅\(redbox.width)、高さ\(redbox.height)、色\(redbox.color)")
+       Ball.sozai = "木"
+        let ball1 = Ball(radius: 15)
+        let ball2 = Ball()
+        print(ball1.radius)
+        print(ball2.radius)
+        print(Ball.madein)
+        print(Ball.sozai)
     }
     
     override func didReceiveMemoryWarning() {
