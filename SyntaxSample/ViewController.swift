@@ -10,22 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct Ball {
-        static let madein = "日本"
-        static var sozai = "紙"
-        var radius: Double = 10.0
+    class BoxClass{
+        var size:String = "M"
+        var color:String = "red"
+    }
+    
+    struct BoxStruct {
+        var size: String = "M"
+        var color:String = "red"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       Ball.sozai = "木"
-        let ball1 = Ball(radius: 15)
-        let ball2 = Ball()
-        print(ball1.radius)
-        print(ball2.radius)
-        print(Ball.madein)
-        print(Ball.sozai)
+        let cBox1 = BoxClass()
+        let cBox2 = cBox1
+        cBox2.color = "green"
+        
+        let sBox1 = BoxStruct()
+        var sBox2 = sBox1
+        sBox2.color = "green"
+        
+        print("cBox1:\(cBox1.size) \(cBox1.color)")
+        print("cBox2:\(cBox2.size) \(cBox2.color)")
+        print("sBox1:\(sBox1.size) \(sBox1.color)")
+        print("sBox2:\(sBox2.size) \(sBox2.color)")
     }
     
     override func didReceiveMemoryWarning() {
