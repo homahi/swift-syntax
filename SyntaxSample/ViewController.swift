@@ -7,51 +7,29 @@
 //
 
 import UIKit
-
+protocol Monster{
+    var monsterName: String {get}
+    var hp:Int {get set}
+    mutating func updateHP(pt:Int)
+}
+struct Bokemon:Monster{
+    private(set) var monsterName: String
+    var hp:Int
+    mutating func updateHP(pt:Int){
+        hp += pt
+    }
+}
 class ViewController: UIViewController {
     
-    struct Stock{
-        var name:String
-        var data:[String:Int] = [:]
-        init(name:String){
-            self.name = name
-        }
-        
-        subscript(color:String, size:Double) -> Int {
-            get {
-                let key = color + String(size)
-                if let value = data[key]{
-                    return value
-                } else{
-                    return 0
-                }
-            }
-            
-            set {
-                let key = color + String(size)
-                data[key] = newValue
-            }
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var shoes = Stock(name: "Tiger")
-        shoes["green", 24.5] = 3
-        shoes["green", 25.0] = 5
-        
-        shoes["green", 24.5] -= 2
-        shoes["green", 25.0] += 1
-        
-        shoes["red", 26.0] += 5
-        
-        print(shoes.name)
-        print(shoes["green", 24.5])
-        print(shoes["green", 25.0])
-        print(shoes["red", 26.0])
-        print(shoes["red", 25.5])
-        print(shoes["white", 25.0])
+        var aMonster = Bokemon(monsterName: "スイフィー", hp:200)
+        print(aMonster.monsterName)
+        print("HPポイント \(aMonster.hp)")
+        aMonster.updateHP(pt:30)
+        print("HPポイント \(aMonster.hp)")
     }
     
     override func didReceiveMemoryWarning() {
