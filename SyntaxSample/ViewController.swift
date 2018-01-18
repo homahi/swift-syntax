@@ -10,38 +10,48 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct Line {
-        var p1: Point
-        var p2: Point
-        
-        mutating func move(h:Double, v:Double){
-            p1.x += h
-            p1.y += v
-            p2.x += h
-            p2.y += v
+    struct Stock{
+        var name:String
+        var data:[String:Int] = [:]
+        init(name:String){
+            self.name = name
         }
-    }
-    
-    struct Point {
-        var x: Double
-        var y: Double
+        
+        subscript(color:String, size:Double) -> Int {
+            get {
+                let key = color + String(size)
+                if let value = data[key]{
+                    return value
+                } else{
+                    return 0
+                }
+            }
+            
+            set {
+                let key = color + String(size)
+                data[key] = newValue
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let point1 = Point(x: 100, y: 100)
-        let point2 = Point(x: 300, y: 200)
+        var shoes = Stock(name: "Tiger")
+        shoes["green", 24.5] = 3
+        shoes["green", 25.0] = 5
         
-        var theLine = Line(p1: point1, p2: point2)
+        shoes["green", 24.5] -= 2
+        shoes["green", 25.0] += 1
         
-        print("移動前のp1\(theLine.p1)")
-        print("移動前のp2\(theLine.p2)")
-        print("--------")
+        shoes["red", 26.0] += 5
         
-        theLine.move(h:50, v: 60)
-        print("移動前のp1\(theLine.p1)")
-        print("移動前のp2\(theLine.p2)")
+        print(shoes.name)
+        print(shoes["green", 24.5])
+        print(shoes["green", 25.0])
+        print(shoes["red", 26.0])
+        print(shoes["red", 25.5])
+        print(shoes["white", 25.0])
     }
     
     override func didReceiveMemoryWarning() {
