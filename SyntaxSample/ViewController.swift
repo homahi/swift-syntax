@@ -10,31 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    class BoxClass{
-        var size:String = "M"
-        var color:String = "red"
+    struct Box {
+        let width :Int
+        let height: Int
+        let size:String
+        
+        init(width:Int, height:Int){
+            self.width = width
+            self.height = height
+            
+            if(width + height)<250{
+                size = "M"
+            } else{
+                size = "L"
+            }
+        }
     }
-    
-    struct BoxStruct {
-        var size: String = "M"
-        var color:String = "red"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cBox1 = BoxClass()
-        let cBox2 = cBox1
-        cBox2.color = "green"
-        
-        let sBox1 = BoxStruct()
-        var sBox2 = sBox1
-        sBox2.color = "green"
-        
-        print("cBox1:\(cBox1.size) \(cBox1.color)")
-        print("cBox2:\(cBox2.size) \(cBox2.color)")
-        print("sBox1:\(sBox1.size) \(sBox1.color)")
-        print("sBox2:\(sBox2.size) \(sBox2.color)")
+        let box1 = Box(width:120, height:80)
+        let box2 = Box(width:150, height:120)
+        print(box1)
+        print(box2)
     }
     
     override func didReceiveMemoryWarning() {
