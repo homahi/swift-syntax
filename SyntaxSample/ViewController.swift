@@ -10,29 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct Box {
-        let width :Int
-        let height: Int
-        let size:String
+    struct Goods {
+        let tanka: Int
+        let kosu: Int
         
-        init(width:Int, height:Int){
-            self.width = width
-            self.height = height
-            
-            if(width + height)<250{
-                size = "M"
-            } else{
-                size = "L"
-            }
+        var price:Int{
+            return tanka * kosu
+        }
+        
+        func sellprice(nebiki: Int = 0) -> Int{
+            return price - nebiki * kosu
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let box1 = Box(width:120, height:80)
-        let box2 = Box(width:150, height:120)
-        print(box1)
-        print(box2)
+        let myGoods = Goods(tanka:700, kosu: 4)
+        let selling_price = myGoods.sellprice(nebiki: 10)
+        
+        print("一個\(myGoods.tanka)円、\(myGoods.kosu)個入り、定価\(myGoods.price)円")
+        print("販売価格\(selling_price)円")
     }
     
     override func didReceiveMemoryWarning() {
