@@ -103,3 +103,15 @@ enum PColor: String{
     case yellow = "黄"
     case white = "白"
 }
+
+struct ColorBox{
+    var width: Int
+    var height: Int
+    var color:String
+}
+
+struct WhiteBox{
+    var width :Int = 100
+    var height :Int = 100
+    let color: String = "whtite"
+}

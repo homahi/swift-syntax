@@ -10,49 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    enum Ticket{
-        case Gold, A, B
-        
-        static var name = "入場券"
-        
-        var area: String{
-            get {
-                switch self{
-                case .Gold:
-                    return "ゴールド席"
-                case .A:
-                    return "A席"
-                case .B:
-                    return "B席"
-                }
-            }
-        }
-        
-        var price:Int{
-            get{
-                switch self{
-                case .Gold:
-                    return 24000
-                case .A:
-                    return 5000
-                case .B:
-                    return 2000
-                }
-            }
-        }
+    struct ColorBox {
+        var width: Int
+        var height: Int
+        var color : String
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Ticket.name = "超ライブ入場券"
+        var redbox = ColorBox(width: 100, height:100, color: "red")
+        print("幅\(redbox.width)、高さ\(redbox.height)、色\(redbox.color)")
         
-        let ticket1 = Ticket.A
-        let ticket2 = Ticket.Gold
-        
-        print(Ticket.name, ticket1.area, ticket1.price)
-        print(Ticket.name, ticket2.area, ticket2.price)
-        
+        redbox.width = 90
+        redbox.color = "blue"
+        print("幅\(redbox.width)、高さ\(redbox.height)、色\(redbox.color)")
     }
     
     override func didReceiveMemoryWarning() {
