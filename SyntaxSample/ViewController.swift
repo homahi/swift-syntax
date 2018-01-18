@@ -8,64 +8,50 @@
 
 import UIKit
 
-enum Season{
-    case Spring, Summer, Autumn, Winter
-}
-
-class MyClass{
-    let kisetsu = Season.Autumn
-    func sukinaKisetsu() -> Season{
-        return kisetsu
-    }
-}
-
 class ViewController: UIViewController {
     
-    enum Signal:String{
-        case Green = "緑色"
-        case Red = "赤色"
+    enum Ticket{
+        case Gold, A, B
         
-        var color:String{
-            return self.rawValue
-        }
+        static var name = "入場券"
         
-        static func description() -> String{
-            return "GreenまたはRedのシグナルです。"
-        }
-        
-        func isRun() -> Bool{
-            if self == .Green{
-                return true
-            } else {
-                return false
+        var area: String{
+            get {
+                switch self{
+                case .Gold:
+                    return "ゴールド席"
+                case .A:
+                    return "A席"
+                case .B:
+                    return "B席"
+                }
             }
         }
         
-        mutating func turn(){
-            if self == .Green{
-                self = .Red
-            } else{
-                self = .Green
+        var price:Int{
+            get{
+                switch self{
+                case .Gold:
+                    return 24000
+                case .A:
+                    return 5000
+                case .B:
+                    return 2000
+                }
             }
         }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let text = Signal.description()
-        print(text)
+        Ticket.name = "超ライブ入場券"
         
-        var lamp = Signal.Green
+        let ticket1 = Ticket.A
+        let ticket2 = Ticket.Gold
         
-        print(lamp.color)
-        print(lamp.isRun())
-        print("----値を反転する----")
-        lamp.turn()
-        print(lamp.color)
-        print(lamp.isRun())
-        
+        print(Ticket.name, ticket1.area, ticket1.price)
+        print(Ticket.name, ticket2.area, ticket2.price)
         
     }
     
