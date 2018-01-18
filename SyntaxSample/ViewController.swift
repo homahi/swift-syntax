@@ -21,28 +21,52 @@ class MyClass{
 
 class ViewController: UIViewController {
     
+    enum Signal:String{
+        case Green = "緑色"
+        case Red = "赤色"
+        
+        var color:String{
+            return self.rawValue
+        }
+        
+        static func description() -> String{
+            return "GreenまたはRedのシグナルです。"
+        }
+        
+        func isRun() -> Bool{
+            if self == .Green{
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        mutating func turn(){
+            if self == .Green{
+                self = .Red
+            } else{
+                self = .Green
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let shirt1 = Pattern.Monotone(.red)
-        let shirt2 = Pattern.Border(color1: .white, color2: .red)
-        let shirt3 = Pattern.Dots(base: .yellow, dot1: .white, dot2: .green)
+        let text = Signal.description()
+        print(text)
         
-        let patternList = [shirt1, shirt2, shirt3]
-        for thePattern in patternList{
-            switch thePattern{
-            case .Monotone(let c):
-                print("\(c.rawValue)の無地")
-            case .Border(let c1, let c2):
-                print("\(c1.rawValue)と\(c2.rawValue)のボーダー")
-            case let .Dots(base, dot1, dot2):
-                let bColor = base.rawValue
-                let dc1 = dot1.rawValue
-                let dc2 = dot2.rawValue
-                print("\(bColor)地に\(dc1)と\(dc2)のドット")
-            }
-        }
+        var lamp = Signal.Green
+        
+        print(lamp.color)
+        print(lamp.isRun())
+        print("----値を反転する----")
+        lamp.turn()
+        print(lamp.color)
+        print(lamp.isRun())
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
