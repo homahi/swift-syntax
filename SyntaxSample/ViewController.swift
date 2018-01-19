@@ -7,29 +7,13 @@
 //
 
 import UIKit
-protocol Monster{
-    var monsterName: String {get}
-    var hp:Int {get set}
-    mutating func updateHP(pt:Int)
-}
-struct Bokemon:Monster{
-    private(set) var monsterName: String
-    var hp:Int
-    mutating func updateHP(pt:Int){
-        hp += pt
-    }
-}
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aMonster = Bokemon(monsterName: "スイフィー", hp:200)
-        print(aMonster.monsterName)
-        print("HPポイント \(aMonster.hp)")
-        aMonster.updateHP(pt:30)
-        print("HPポイント \(aMonster.hp)")
     }
     
     override func didReceiveMemoryWarning() {
