@@ -10,6 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    @IBAction func thankYou(_ sender: Any) {
+        myLabel.text = "ありがとう"
+    }
+    @IBAction func hello(_ sender: Any) {
+        myLabel.text="こんにちは"
+    }
     @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
