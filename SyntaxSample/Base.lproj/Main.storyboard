@@ -18,22 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ハローワールド" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-27-cyo">
-                                <rect key="frame" x="99" y="173" width="122" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5Lu-xe-MUH"/>
-                                    <constraint firstAttribute="width" constant="122" id="aG4-g2-0sg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bmPJTvnn_400x400 (2)" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-ox-hzF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pd3-27-cyo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="153" id="7D3-4F-mJI"/>
-                            <constraint firstItem="pd3-27-cyo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TWN-4z-TyY"/>
-                            <constraint firstItem="pd3-27-cyo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pb3-3c-W1k"/>
+                            <constraint firstItem="ZLd-ox-hzF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0Zj-Ng-qwk"/>
+                            <constraint firstItem="ZLd-ox-hzF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4bH-NP-N6e"/>
+                            <constraint firstItem="ZLd-ox-hzF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="l41-DZ-C2j"/>
+                            <constraint firstItem="ZLd-ox-hzF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tEH-m3-rxs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -42,4 +36,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="bmPJTvnn_400x400 (2)" width="400" height="400"/>
+    </resources>
 </document>
