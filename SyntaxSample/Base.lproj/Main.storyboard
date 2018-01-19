@@ -18,17 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ハローワールド" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEI-I1-n1m">
-                                <rect key="frame" x="99" y="273.5" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-rM-KPn">
+                                <rect key="frame" x="45" y="269" width="30" height="30"/>
+                                <state key="normal" title="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53R-01-F0p">
+                                <rect key="frame" x="245" y="269" width="30" height="30"/>
+                                <state key="normal" title="NO"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DEI-I1-n1m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PfT-qX-XHp"/>
-                            <constraint firstItem="DEI-I1-n1m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="osR-id-KfZ"/>
+                            <constraint firstItem="mRM-rM-KPn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HSw-V7-ZPY"/>
+                            <constraint firstItem="53R-01-F0p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="Heg-tX-kX2"/>
+                            <constraint firstItem="53R-01-F0p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qgE-Bb-4jb"/>
+                            <constraint firstItem="mRM-rM-KPn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="xdO-qt-HlH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
