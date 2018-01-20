@@ -9,23 +9,26 @@
 import UIKit
 class ViewController: UIViewController {
     
-    @objc func ok(_ sender:UIButton){
-        print("OK")
-    }
 
+    @objc func hello (_ sender: UIButton){
+        print("ハロー")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let okButton = UIButton()
-        okButton.frame = CGRect(x:100, y:100, width: 120, height:120)
+        let myButton = UIButton(type:.custom)
+        myButton.frame = CGRect(x:50, y: 100, width: 120, height:50)
         
-        let bkgImage = UIImage(named: "bmPJTvnn_400x400 (2)")
-        okButton.setBackgroundImage(bkgImage, for: .normal)
+        let image1 = UIImage(named: "homahi")
+        let image2 = UIImage(named: "homahi")
+        myButton.setImage(image1, for: .normal)
+        myButton.setImage(image2, for: .highlighted)
         
-        okButton.setTitle("OK", for: .normal)
-        okButton.setTitleColor(.black, for: .normal)
-        okButton.addTarget(self, action: #selector(ViewController.ok(_:)), for: UIControlEvents.touchUpInside)
-        view.addSubview(okButton)
+        myButton.setTitle("Hello", for: .normal)
+        myButton.setTitleColor(UIColor.black, for: .normal)
+        myButton.addTarget(self, action: #selector(ViewController.hello(_:)), for: UIControlEvents.touchUpInside)
+        
+        self.view.addSubview(myButton)
     }
     
     override func didReceiveMemoryWarning() {
