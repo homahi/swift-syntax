@@ -8,23 +8,19 @@
 
 import UIKit
 class ViewController: UIViewController {
-    
 
-    @IBOutlet weak var myLabel1: UILabel!
-    @IBOutlet weak var myLabel2: UILabel!
-    @IBOutlet weak var myLabel3: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let textdata = "詳細!Swift iOSアプリ開発入門ノート"
-        myLabel1.text = textdata
+        let myLabel = UILabel()
+        myLabel.text = "ハローワールド"
         
-        myLabel2.adjustsFontSizeToFitWidth = true
-        myLabel2.text = textdata
-
-        myLabel3.adjustsFontSizeToFitWidth = true
-        myLabel3.minimumScaleFactor = 0.6
-        myLabel3.text = textdata
+        myLabel.frame = CGRect(x:50, y:100, width:200, height: 21)
+        
+        myLabel.textColor = UIColor.black
+        myLabel.backgroundColor = UIColor.lightGray
+        
+        view.addSubview(myLabel)
     }
     
     override func didReceiveMemoryWarning() {
