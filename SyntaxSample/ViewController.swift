@@ -9,24 +9,19 @@
 import UIKit
 class ViewController: UIViewController {
     
-    
-    @IBOutlet weak var colorChip: UIView!
-    @IBAction func changedColor(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex{
-        case 0:
-            colorChip.backgroundColor = UIColor.blue
-        case 1:
-            colorChip.backgroundColor = UIColor.yellow
-        case 2:
-            colorChip.backgroundColor = UIColor.green
-        default:
-            colorChip.backgroundColor = UIColor.blue
-            
-        }
+    func RGBA(red:CGFloat, green:CGFloat, blue: CGFloat, alpha:CGFloat) -> UIColor{
+        let r = red/255.0
+        let g = green/255.0
+        let b = blue/255.0
+        let rgba = UIColor(red:r, green:g, blue:b, alpha: alpha)
+        return rgba
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let color = RGBA(red:100, green:255, blue: 200, alpha:1)
+        self.view.backgroundColor = color
     }
     
     override func didReceiveMemoryWarning() {
