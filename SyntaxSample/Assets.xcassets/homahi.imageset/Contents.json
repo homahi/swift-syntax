@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 163,
+          "top" : 236,
+          "right" : 200,
+          "left" : 199
+        }
+      },
       "idiom" : "universal",
       "filename" : "bmPJTvnn_400x400 (2).jpg",
       "scale" : "1x"
