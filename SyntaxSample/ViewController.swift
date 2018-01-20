@@ -10,6 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var myLabel4: UILabel!
+    @IBOutlet weak var myLabel3: UILabel!
+    @IBOutlet weak var myLabel2: UILabel!
+    @IBOutlet weak var myLabel1: UILabel!
     @IBAction func thankYou(_ sender: Any) {
         myLabel.text = "ありがとう"
     }
@@ -20,6 +24,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tanka = 120
+        let kosu = 4
+        
+        myLabel1.text = "単価\(tanka)、\(kosu)個"
+        myLabel2.text = String(tanka*kosu)
+        myLabel3.text = "金額" + myLabel2.text! + "円"
     }
     
     override func didReceiveMemoryWarning() {
