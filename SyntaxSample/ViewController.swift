@@ -11,23 +11,20 @@ class ViewController: UIViewController {
     
 
     @IBOutlet weak var myLabel1: UILabel!
+    @IBOutlet weak var myLabel2: UILabel!
+    @IBOutlet weak var myLabel3: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myLabel1.text = "10.2"
+        let textdata = "詳細!Swift iOSアプリ開発入門ノート"
+        myLabel1.text = textdata
         
-        guard let num = Double(myLabel1.text!) else{
-            return
-        }
-        
-        if num >= 0.0 {
-            myLabel1.textColor = UIColor.black
-            myLabel1.backgroundColor = UIColor.white
-        } else{
-            myLabel1.textColor = UIColor.white
-            myLabel1.backgroundColor = UIColor.red
-        }
-        
+        myLabel2.adjustsFontSizeToFitWidth = true
+        myLabel2.text = textdata
+
+        myLabel3.adjustsFontSizeToFitWidth = true
+        myLabel3.minimumScaleFactor = 0.6
+        myLabel3.text = textdata
     }
     
     override func didReceiveMemoryWarning() {
