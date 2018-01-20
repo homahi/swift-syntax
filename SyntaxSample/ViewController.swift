@@ -10,29 +10,24 @@ import UIKit
 class ViewController: UIViewController {
     
 
-    @IBOutlet weak var myLabel4: UILabel!
-    @IBOutlet weak var myLabel3: UILabel!
-    @IBOutlet weak var myLabel2: UILabel!
     @IBOutlet weak var myLabel1: UILabel!
-    @IBAction func thankYou(_ sender: Any) {
-        myLabel.text = "ありがとう"
-    }
-    @IBAction func hello(_ sender: Any) {
-        myLabel.text="こんにちは"
-    }
-    @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tanka = 120
-        let kosu = 4
+        myLabel1.text = "10.2"
         
-        myLabel1.text = "単価\(tanka)、\(kosu)個"
-        myLabel1.textAlignment = .left
-        myLabel2.text = String(tanka*kosu)
-        myLabel2.textAlignment = .center
-        myLabel3.text = "金額" + myLabel2.text! + "円"
-        myLabel3.textAlignment = .right
+        guard let num = Double(myLabel1.text!) else{
+            return
+        }
+        
+        if num >= 0.0 {
+            myLabel1.textColor = UIColor.black
+            myLabel1.backgroundColor = UIColor.white
+        } else{
+            myLabel1.textColor = UIColor.white
+            myLabel1.backgroundColor = UIColor.red
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
