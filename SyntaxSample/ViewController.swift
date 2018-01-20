@@ -9,20 +9,22 @@
 import UIKit
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numLabel: UILabel!
+    @IBOutlet weak var okButton: UIButton!
+    @IBAction func random(_ sender: Any) {
+        let num = arc4random_uniform(100)
+        numLabel.text = String(num)
+        
+        okButton.isEnabled = (num>=50)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myLabel = UILabel()
-        myLabel.text = "ハローワールド"
-        
-        myLabel.frame = CGRect(x:50, y:100, width:200, height: 21)
-        
-        myLabel.textColor = UIColor.black
-        myLabel.backgroundColor = UIColor.lightGray
-        
-        view.addSubview(myLabel)
     }
     
+    @IBAction func tapOK(_ sender: Any) {
+        print("OK")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
