@@ -10,25 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     
 
-    @objc func hello (_ sender: UIButton){
-        print("ハロー")
+    @IBOutlet weak var numLabel: UILabel!
+    @IBAction func changedStepperValue(_ sender: UIStepper) {
+        let num = Int(sender.value)
+        numLabel.text = String(num)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myButton = UIButton(type:.custom)
-        myButton.frame = CGRect(x:50, y: 100, width: 120, height:50)
-        
-        let image1 = UIImage(named: "homahi")
-        let image2 = UIImage(named: "homahi")
-        myButton.setImage(image1, for: .normal)
-        myButton.setImage(image2, for: .highlighted)
-        
-        myButton.setTitle("Hello", for: .normal)
-        myButton.setTitleColor(UIColor.black, for: .normal)
-        myButton.addTarget(self, action: #selector(ViewController.hello(_:)), for: UIControlEvents.touchUpInside)
-        
-        self.view.addSubview(myButton)
     }
     
     override func didReceiveMemoryWarning() {
