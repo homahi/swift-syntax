@@ -9,12 +9,12 @@
 import UIKit
 class ViewController: UIViewController {
     
-
-    @IBOutlet weak var numLabel: UILabel!
-    @IBAction func changedStepperValue(_ sender: UIStepper) {
-        let num = Int(sender.value)
-        numLabel.text = String(num)
+    
+    @IBOutlet weak var msgLabel: UILabel!
+    @IBAction func showHide(_ sender: UISwitch) {
+        msgLabel.isHidden = !sender.isOn
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
