@@ -14,19 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rect = CGRect(x: 0, y: 0, width: 300, height: 200)
-        let imageView = UIImageView(frame:rect)
+        let image = UIImage(named: "homahi")
+        self.view.backgroundColor = UIColor(patternImage: image!)
         
-//        imageView.contentMode = .scaleAspectFit
-        imageView.contentMode = .center
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "homahi")
-        
-        // イメージビューの座標をルートビューの中央に設定する
-        imageView.center = self.view.center
-        // イメージビューをルートビューに追加（表示)する
-        self.view.addSubview(imageView)
-
     }
     
     override func didReceiveMemoryWarning() {
