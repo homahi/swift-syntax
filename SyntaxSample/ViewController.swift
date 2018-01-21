@@ -11,23 +11,24 @@ import UIKit
 class ViewController: UIViewController {
     
 
-    @IBOutlet weak var myCar: UIImageView!
+    @IBOutlet weak var myPhoto: UIImageView!
     
-    @IBAction func goHome(_ sender: Any) {
-        myCar.center = homePoint
-    }
-    
-    @IBAction func move(_ sender: Any) {
-        myCar.center.x += 10
-    }
-    let homePoint = CGPoint(x:100, y:150)
-    
-    override func viewDidLayoutSubviews() {
-        myCar.center = homePoint
+    @IBAction func changedFrame(_ sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        switch index {
+        case 0 : // 小さく表示
+            myPhoto.frame = CGRect(x: 50, y: 120, width: 160, height: 120)
+        case 1: // 大きく表示
+            myPhoto.frame = CGRect(x: 30, y: 120, width: 256, height: 192)
+            default:
+            myPhoto.frame = CGRect(x: 30, y: 120, width: 256, height: 192)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myPhoto.contentMode = .scaleAspectFill
         
 
     }
