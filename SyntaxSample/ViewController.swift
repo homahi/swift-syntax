@@ -17,7 +17,9 @@ class ViewController: UIViewController {
         let rect = CGRect(x: 0, y: 0, width: 300, height: 200)
         let imageView = UIImageView(frame:rect)
         
-        imageView.contentMode = .scaleAspectFit
+//        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .center
+        imageView.clipsToBounds = true
         imageView.image = UIImage(named: "homahi")
         
         // イメージビューの座標をルートビューの中央に設定する
