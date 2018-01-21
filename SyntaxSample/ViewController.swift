@@ -9,10 +9,8 @@
 import UIKit
 class ViewController: UIViewController {
     
-    @IBOutlet weak var homahi: UIImageView!
-    @IBAction func changeSlider(_ sender: UISlider) {
-        homahi.alpha = CGFloat(sender.value)
-    }
+    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
