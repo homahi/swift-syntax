@@ -27,6 +27,10 @@ class ViewController: UIViewController , UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let tmpStr = textField.text! as NSString
