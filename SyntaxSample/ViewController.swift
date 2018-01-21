@@ -21,6 +21,24 @@ class ViewController: UIViewController {
         labelA.textColor = UIColor.white
         
         self.view.addSubview(labelA)
+        
+        // ビューを作る
+        let theView = UIView()
+        // ビューの領域と背景色
+        theView.frame = CGRect(x:60, y:100, width: 210, height:200)
+        theView.backgroundColor = UIColor(red:0.9, green:0.9, blue:0.6, alpha:1.0)
+        
+        // ラベルBを作る
+        let labelB = UILabel()
+        labelB.text = "ラベルB"
+        // ラベルの領域
+        labelB.frame = CGRect(x:50, y:60, width: 100, height:21)
+        labelB.backgroundColor = UIColor.orange
+        labelB.textColor = UIColor.white
+        
+        // ラベルBをtheViewに追加する
+        theView.addSubview(labelB)
+        self.view.addSubview(theView)
 
     }
     
