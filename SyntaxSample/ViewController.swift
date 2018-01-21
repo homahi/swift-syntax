@@ -46,5 +46,22 @@ class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataS
         let item = compos[component][row]
         return item
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // 選ばれた項目
+        let item = compos[component][row]
+        print("\(item)が選ばれた")
+        
+        // 現在選択されている行番号
+        let row1 = pickerView.selectedRow(inComponent: 0)
+        let row2 = pickerView.selectedRow(inComponent: 1)
+        print("現在選択されている行番号")
+        
+        // 現在選択されている項目名
+        let item1 = self.pickerView(pickerView, titleForRow: row1, forComponent: 0)
+        let item2 = self.pickerView(pickerView, titleForRow: row2, forComponent: 1)
+        print("現在選択されている項目名 \(item1!, item2!)")
+        print("---------------------")
+    }
 }
 
