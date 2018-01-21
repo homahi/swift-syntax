@@ -9,27 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
 
-    @IBOutlet weak var myPhoto: UIImageView!
-    
-    @IBAction func changedFrame(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        switch index {
-        case 0 : // 小さく表示
-            myPhoto.frame = CGRect(x: 50, y: 120, width: 160, height: 120)
-        case 1: // 大きく表示
-            myPhoto.frame = CGRect(x: 30, y: 120, width: 256, height: 192)
-            default:
-            myPhoto.frame = CGRect(x: 30, y: 120, width: 256, height: 192)
-        }
+    @IBOutlet weak var arrow: UIImageView!
+    @IBOutlet weak var tombo: UIImageView!
+    @IBOutlet weak var sky: UIView!
+    @IBAction func catchTombo(_ sender: Any) {
+        // skyビューの座標tombo.centerをviewビューの座標系に変換する
+        var point = view.convert(tombo.center, from: sky)
+        // 矢印の先端がpointを指し示すように調整する
+        point.x += arrow.bounds.width/2
+        point.y -= arrow.bounds.height/2
+        // 矢印を移動させる
+        arrow.center = point
+        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myPhoto.contentMode = .scaleAspectFill
-        
+
 
     }
     

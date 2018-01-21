@@ -18,21 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="VHy-wI-xN2">
-                                <rect key="frame" x="40" y="101" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="97i-gd-afY">
+                                <rect key="frame" x="64" y="69" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g7w-pA-Rcz">
-                                <rect key="frame" x="54" y="39" width="226" height="29"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dk-k2-jh2">
+                                <rect key="frame" x="53" y="214" width="251" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="小さく表示"/>
-                                    <segment title="大きく表示"/>
-                                </segments>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="uET-5s-zep">
+                                        <rect key="frame" x="11" y="8" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afo-aT-ohI">
+                                <rect key="frame" x="215" y="422" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="トンボを指す"/>
                                 <connections>
-                                    <action selector="changedFrame:" destination="BYZ-38-t0r" eventType="valueChanged" id="ydy-F6-d1e"/>
+                                    <action selector="catchTombo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RA7-u7-Fk8"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -42,7 +50,9 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="myPhoto" destination="VHy-wI-xN2" id="hC1-rh-GsA"/>
+                        <outlet property="arrow" destination="97i-gd-afY" id="ljA-ML-JyS"/>
+                        <outlet property="sky" destination="5dk-k2-jh2" id="zkq-TA-6tG"/>
+                        <outlet property="tombo" destination="uET-5s-zep" id="hpZ-SQ-YrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
