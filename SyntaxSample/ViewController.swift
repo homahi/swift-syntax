@@ -7,19 +7,17 @@
 //
 
 import UIKit
-class ViewController: UIViewController , UITextFieldDelegate{
+class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource{
     
+    let compos = [["月","火", "水", "木", "金"],["早朝","午前中", "昼間","夜間"]]
 
-    @IBAction func tapView(_ sender: Any) {
-        view.endEditing(true)
-    }
-    @IBOutlet weak var myTextField: UITextField!
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var myPickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myTextField.delegate = self
-        
+        myPickerView.delegate = self
+        myPickerView.dataSource = self
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,28 +25,26 @@ class ViewController: UIViewController , UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return false
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return compos.count
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let tmpStr = textField.text! as NSString
-        let replacedString = tmpStr.replacingCharacters(in: range, with: string)
-        if replacedString == ""{
-            myLabel.text = "0"
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        let compo = compos[component]
+        return compo.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if component == 0 {
+            return 50
         } else {
-            if let num = Int(replacedString) {
-                myLabel.text = String(num * 25)
-            }
+            return 100
         }
-        return true
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        myLabel.text = "0"
-        return true
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let item = compos[component][row]
+        return item
     }
-
 }
 

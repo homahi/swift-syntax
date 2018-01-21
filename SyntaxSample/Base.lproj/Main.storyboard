@@ -18,32 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入れる" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0fy-nh-dcP">
-                                <rect key="frame" x="73" y="127" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-on-Jj5">
-                                <rect key="frame" x="100" y="220" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-AT-0ZG">
+                                <rect key="frame" x="0.0" y="60" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="oEe-4W-pto"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="wNA-KI-9bI"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J2m-AT-0ZG" secondAttribute="bottom" constant="447" id="8dS-ig-Yse"/>
+                            <constraint firstItem="J2m-AT-0ZG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lhm-ZZ-bkl"/>
+                            <constraint firstItem="J2m-AT-0ZG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="glb-YV-Pcd"/>
+                            <constraint firstAttribute="trailing" secondItem="J2m-AT-0ZG" secondAttribute="trailing" id="tKk-3c-NdR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="q7c-s0-zy3" appends="YES" id="Btt-OQ-kH7"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="myLabel" destination="Rnl-on-Jj5" id="ed4-fJ-tAE"/>
-                        <outlet property="myTextField" destination="0fy-nh-dcP" id="yiU-lI-ct1"/>
+                        <outlet property="myPickerView" destination="J2m-AT-0ZG" id="TAK-ea-FNq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
