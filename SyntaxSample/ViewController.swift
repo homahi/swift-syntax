@@ -11,12 +11,25 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var myCar: UIImageView!
+    
+    @IBAction func goHome(_ sender: Any) {
+        myCar.center = homePoint
+    }
+    
+    @IBAction func move(_ sender: Any) {
+        myCar.center.x += 10
+    }
+    let homePoint = CGPoint(x:100, y:150)
+    
+    override func viewDidLayoutSubviews() {
+        myCar.center = homePoint
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImage(named: "homahi")
-        self.view.backgroundColor = UIColor(patternImage: image!)
-        
+
     }
     
     override func didReceiveMemoryWarning() {

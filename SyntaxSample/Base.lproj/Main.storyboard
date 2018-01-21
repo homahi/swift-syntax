@@ -17,6 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="VHy-wI-xN2">
+                                <rect key="frame" x="40" y="101" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRa-pq-TFX">
+                                <rect key="frame" x="31" y="269" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ホームに戻る"/>
+                                <connections>
+                                    <action selector="goHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nyx-CX-nbo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc3-og-BGD">
+                                <rect key="frame" x="46" y="323" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="右へ進む"/>
+                                <connections>
+                                    <action selector="move:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xpe-z4-8Iu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -24,6 +46,9 @@
                             <outletCollection property="gestureRecognizers" destination="q7c-s0-zy3" appends="YES" id="Btt-OQ-kH7"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="myCar" destination="VHy-wI-xN2" id="jvW-W2-Ar4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="q7c-s0-zy3">
@@ -35,4 +60,7 @@
             <point key="canvasLocation" x="22.5" y="28.52112676056338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homahi" width="400" height="400"/>
+    </resources>
 </document>
