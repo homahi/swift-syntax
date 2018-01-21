@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "homahi")
         
+        // イメージビューの座標をルートビューの中央に設定する
+        imageView.center = self.view.center
+        // イメージビューをルートビューに追加（表示)する
+        self.view.addSubview(imageView)
 
     }
     
