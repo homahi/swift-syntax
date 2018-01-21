@@ -14,6 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let labelA = UILabel()
+        labelA.text = "ラベルA"
+        labelA.frame = CGRect(x:80, y:150, width:110, height:21)
+        labelA.backgroundColor = UIColor.orange
+        labelA.textColor = UIColor.white
+        
+        self.view.addSubview(labelA)
 
     }
     
