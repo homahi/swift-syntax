@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController , UITextFieldDelegate{
     
 
+    @IBAction func tapView(_ sender: Any) {
+        view.endEditing(true)
+    }
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {

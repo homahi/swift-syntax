@@ -35,7 +35,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q7c-s0-zy3" appends="YES" id="Btt-OQ-kH7"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="myLabel" destination="Rnl-on-Jj5" id="ed4-fJ-tAE"/>
@@ -43,6 +47,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q7c-s0-zy3">
+                    <connections>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="ASD-Rh-S7x"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="22.5" y="28.52112676056338"/>
         </scene>
