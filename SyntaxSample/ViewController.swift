@@ -27,6 +27,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // サブビューを作る
+        let subView = createContentView(contentList: photoList)
+        // スクロールビューにサブビューを追加する
+        scrollView.addSubview(subView)
+        // スクロールビューの設定
+        scrollView.isPagingEnabled = true // ページ送りする
+        scrollView.contentSize = subView.frame.size //コンテンツサイズ
+        scrollView.contentOffset = CGPoint(x:0, y:0)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,7 +87,6 @@ class ViewController: UIViewController {
             contentView.addSubview(pageView)
         }
         return contentView
-        
     }
 }
 
