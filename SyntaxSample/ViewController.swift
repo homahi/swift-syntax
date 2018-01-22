@@ -20,6 +20,13 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let myTableView:UITableView!
+        myTableView = UITableView(frame:view.frame, style:.grouped)
+        myTableView.delegate = self
+        
+        myTableView.dataSource = self
+        view.addSubview(myTableView)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,5 +56,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         return sectionTitle[section]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let title = sectionTitle[indexPath.section]
+        let sectionData = tableData[indexPath.section]
+        let cellData = sectionData[indexPath.row]
+        print("\(title)\(cellData.1)")
+        print("\(cellData.0)")
+    }
 }
 
