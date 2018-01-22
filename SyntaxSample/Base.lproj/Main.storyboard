@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,16 +15,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SyntaxSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-3J-szd">
+                                <rect key="frame" x="0.0" y="72" width="375" height="300"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="isz-Ia-ed0">
+                                <rect key="frame" x="168" y="380" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ejl-3J-szd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uam-Ji-PJW"/>
+                            <constraint firstAttribute="trailing" secondItem="ejl-3J-szd" secondAttribute="trailing" id="kLS-rR-flM"/>
+                            <constraint firstItem="isz-Ia-ed0" firstAttribute="top" secondItem="ejl-3J-szd" secondAttribute="bottom" constant="8" id="rR8-KT-MQq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ejl-3J-szd" secondAttribute="bottom" constant="295" id="tfa-Yu-F6N"/>
+                            <constraint firstItem="isz-Ia-ed0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uqt-V2-lDb"/>
+                            <constraint firstItem="ejl-3J-szd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="vtO-u4-q3M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="isz-Ia-ed0" id="1es-Zz-67G"/>
+                        <outlet property="scrollView" destination="ejl-3J-szd" id="kun-70-SAL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22.5" y="28.52112676056338"/>
+            <point key="canvasLocation" x="21.600000000000001" y="28.335832083958024"/>
         </scene>
     </scenes>
 </document>
