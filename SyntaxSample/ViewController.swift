@@ -36,6 +36,12 @@ class ViewController: UIViewController {
         scrollView.contentSize = subView.frame.size //コンテンツサイズ
         scrollView.contentOffset = CGPoint(x:0, y:0)
         
+        // ページコントロールを設定する
+        pageControl.numberOfPages = photoList.count
+        pageControl.currentPage = 0
+        // ページコントロールのドットの色
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.black
     }
     
     override func didReceiveMemoryWarning() {
