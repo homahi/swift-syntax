@@ -98,6 +98,10 @@
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="nnL-VQ-AXT" appends="YES" id="FwP-hS-JvW"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -110,9 +114,19 @@
                     <connections>
                         <outlet property="contentView" destination="4cW-0J-Jc9" id="Pbs-Kg-qYb"/>
                         <outlet property="myScrollView" destination="D3i-Nf-Y1f" id="iVe-7J-hU3"/>
+                        <outletCollection property="myTextFields" destination="WPB-yf-wvi" collectionClass="NSMutableArray" id="Snt-dO-djj"/>
+                        <outletCollection property="myTextFields" destination="X8y-kR-rp9" collectionClass="NSMutableArray" id="NPQ-Oo-Kfg"/>
+                        <outletCollection property="myTextFields" destination="M78-dL-LPA" collectionClass="NSMutableArray" id="uWf-VA-hxA"/>
+                        <outletCollection property="myTextFields" destination="iV1-q0-jJJ" collectionClass="NSMutableArray" id="azU-Zy-o8f"/>
+                        <outletCollection property="myTextFields" destination="bAp-Sm-pba" collectionClass="NSMutableArray" id="dzp-wE-Wrf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nnL-VQ-AXT">
+                    <connections>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="73H-6q-0v8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="27.886056971514247"/>
         </scene>
