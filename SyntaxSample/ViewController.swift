@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController , UITextFieldDelegate{
     
+    @IBAction func comeHome (segue: UIStoryboardSegue){
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
