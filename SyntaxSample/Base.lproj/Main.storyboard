@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to Frog"/>
                                 <connections>
-                                    <segue destination="b7J-zI-fPU" kind="presentation" id="tBd-3K-q78"/>
+                                    <segue destination="b7J-zI-fPU" kind="presentation" modalTransitionStyle="flipHorizontal" id="tBd-3K-q78"/>
                                 </connections>
                             </button>
                         </subviews>
