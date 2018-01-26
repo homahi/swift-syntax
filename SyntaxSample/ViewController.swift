@@ -10,10 +10,9 @@ import UIKit
 
 class ViewController: UIViewController , UITextFieldDelegate{
     
-    @IBAction func comeHome (segue: UIStoryboardSegue){
-        
-    }
 
+    @IBAction func gotoTreePage(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
