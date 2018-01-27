@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="treePageへ移動する"/>
                                 <connections>
-                                    <action selector="gotoTreePage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AaG-tX-DGH"/>
+                                    <action selector="gotoTreePage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISK-4L-MVX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,9 +32,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
-                    <connections>
-                        <outlet property="gotoTreePage" destination="fFD-6m-JT5" id="c1V-V6-LvX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="nnL-VQ-AXT"/>
