@@ -10,10 +10,6 @@ import UIKit
 
 class TreePageViewController: UIViewController {
 
-    @IBAction func backToHome(_ sender: Any) {
-        // 現在のシーンを閉じて元のシーンに戻る
-        self.dismiss(animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

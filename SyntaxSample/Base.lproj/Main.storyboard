@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h1s-KH-ja7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--スタート-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SyntaxSample" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,12 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-6m-JT5">
-                                <rect key="frame" x="118" y="106" width="138" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBW-fd-MuM">
+                                <rect key="frame" x="129" y="166" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="treePageへ移動する"/>
+                                <state key="normal" title="海を選ぶ"/>
                                 <connections>
-                                    <action selector="gotoTreePage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISK-4L-MVX"/>
+                                    <segue destination="XKN-ot-LQr" kind="show" id="w0S-QX-bzs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-um-k5b">
+                                <rect key="frame" x="129" y="299" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="山を選ぶ"/>
+                                <connections>
+                                    <segue destination="bfb-Xj-DmA" kind="show" id="tXq-X7-eLY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -31,44 +39,63 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="スタート" id="NvU-eQ-bjJ"/>
                     <size key="freeformSize" width="375" height="800"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="nnL-VQ-AXT"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="27.886056971514247"/>
+            <point key="canvasLocation" x="697" y="97"/>
         </scene>
-        <!--Tree Page View Controller-->
-        <scene sceneID="UJz-qw-XHq">
+        <!--山で遊ぼう-->
+        <scene sceneID="wac-WC-XZy">
             <objects>
-                <viewController storyboardIdentifier="treePage" id="zFk-jD-6Pg" customClass="TreePageViewController" customModule="SyntaxSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oKV-Zp-fTE">
+                <viewController id="bfb-Xj-DmA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4MO-Ho-dgh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c56-vR-KYW">
-                                <rect key="frame" x="141" y="113" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ホームへ戻る"/>
-                                <connections>
-                                    <action selector="backToHome:" destination="zFk-jD-6Pg" eventType="touchUpInside" id="6p3-OP-cDj"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="rz5-Dw-WQL">
-                                <rect key="frame" x="116" y="247" width="143" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="r3j-nM-XyC"/>
+                        <viewLayoutGuide key="safeArea" id="enf-TA-r8u"/>
                     </view>
+                    <navigationItem key="navigationItem" title="山で遊ぼう" id="jAJ-sI-x8v"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="feS-tr-Umt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-iP-q3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.39999999999998" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="1387" y="226"/>
+        </scene>
+        <!--海で遊ぼう-->
+        <scene sceneID="YRZ-3d-ngu">
+            <objects>
+                <viewController id="XKN-ot-LQr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P83-np-5L5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7IK-kn-lJa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="海で遊ぼう" id="DyY-5g-bPi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtI-ms-Aur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="-340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a0b-BR-BS4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h1s-KH-ja7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2DU-eb-mrK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YqY-vv-RVq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4p-CE-n9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.800000000000001" y="27.886056971514247"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="homahi" width="400" height="400"/>
-    </resources>
 </document>
