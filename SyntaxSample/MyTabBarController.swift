@@ -9,11 +9,21 @@
 import UIKit
 
 class MyTabBarController: UITabBarController {
+    
+    // タブバーが切り替わると実行される
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        // Thirdタブだった時バッジを消す
+        if item.title == "Third"{
+            item.badgeValue = nil
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 3番目のタブにバッジ"New"をつける
+        let tabBarItem = tabBar.items?[1]
+        tabBarItem?.badgeValue = "New"
     }
 
     override func didReceiveMemoryWarning() {
