@@ -47,15 +47,10 @@ class WebListTableViewController: UITableViewController {
     }
 
     // セルを作る
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        // テーブルにWebListのデータを表示する
-        let webData = webList[(indexPath as NSIndexPath).row]
-        cell.textLabel?.text = webData.name
-        cell.detailTextLabel?.text = webData.url
-
-        return cell
-    }
+    //override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////
+        //return nil
+    //}
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,14 +92,8 @@ class WebListTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // タップした行番号を取り出す
-        if segue.identifier == "showWebPage"{
-            if let indexPath = self.tableView.indexPathForSelectedRow{
-                // 行のデータを取り出す
-                let webData = webList[(indexPath as NSIndexPath).row]
-                //移動先のビューコントローラのdataプロパティに値を設定する
-                (segue.destination as! ViewController).data = webData
-            }
-        }
+
+
     }
 
 }
