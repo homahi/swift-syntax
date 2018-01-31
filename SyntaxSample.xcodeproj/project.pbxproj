@@ -14,6 +14,7 @@
 		96437E6E200782BA00752AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96437E6C200782BA00752AA4 /* Main.storyboard */; };
 		96437E70200782BA00752AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96437E6F200782BA00752AA4 /* Assets.xcassets */; };
 		96437E73200782BA00752AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96437E71200782BA00752AA4 /* LaunchScreen.storyboard */; };
+		965334F7202173D60054CF6B /* WebListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965334F6202173D60054CF6B /* WebListTableViewController.swift */; };
 		96DDB9A3201C8CAC00B82E59 /* TreePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DDB9A2201C8CAC00B82E59 /* TreePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		96437E6F200782BA00752AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96437E72200782BA00752AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96437E74200782BA00752AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965334F6202173D60054CF6B /* WebListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebListTableViewController.swift; sourceTree = "<group>"; };
 		96DDB9A2201C8CAC00B82E59 /* TreePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				96DDB9A2201C8CAC00B82E59 /* TreePageViewController.swift */,
 				962F601E200E33CF001035F9 /* MyClass.swift */,
 				96437E6C200782BA00752AA4 /* Main.storyboard */,
+				965334F6202173D60054CF6B /* WebListTableViewController.swift */,
 				96437E6F200782BA00752AA4 /* Assets.xcassets */,
 				96437E71200782BA00752AA4 /* LaunchScreen.storyboard */,
 				96437E74200782BA00752AA4 /* Info.plist */,
@@ -147,6 +150,7 @@
 			files = (
 				96437E6B200782BA00752AA4 /* ViewController.swift in Sources */,
 				962F6021200F6E97001035F9 /* GameProtocol.swift in Sources */,
+				965334F7202173D60054CF6B /* WebListTableViewController.swift in Sources */,
 				96437E69200782BA00752AA4 /* AppDelegate.swift in Sources */,
 				96DDB9A3201C8CAC00B82E59 /* TreePageViewController.swift in Sources */,
 				962F601F200E33CF001035F9 /* MyClass.swift in Sources */,
