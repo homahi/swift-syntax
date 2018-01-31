@@ -10,6 +10,10 @@ import UIKit
 
 class MyTabBarController: UITabBarController {
     
+
+    func hello(_ msg:String){
+        print(msg)
+    }
     // タブバーが切り替わると実行される
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // Thirdタブだった時バッジを消す
