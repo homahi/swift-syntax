@@ -1,6 +1,8 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
+      "filename" : "bmPJTvnn_400x400 (2).jpg",
       "resizing" : {
         "mode" : "9-part",
         "center" : {
@@ -14,18 +16,7 @@
           "right" : 200,
           "left" : 199
         }
-      },
-      "idiom" : "universal",
-      "filename" : "bmPJTvnn_400x400 (2).jpg",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      }
     }
   ],
   "info" : {
