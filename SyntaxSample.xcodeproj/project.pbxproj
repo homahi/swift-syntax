@@ -16,6 +16,7 @@
 		96437E73200782BA00752AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96437E71200782BA00752AA4 /* LaunchScreen.storyboard */; };
 		965334F7202173D60054CF6B /* WebListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965334F6202173D60054CF6B /* WebListTableViewController.swift */; };
 		965334F9202180BE0054CF6B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965334F8202180BE0054CF6B /* ThirdViewController.swift */; };
+		965334FB202185750054CF6B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965334FA202185750054CF6B /* MyTabBarController.swift */; };
 		96DDB9A3201C8CAC00B82E59 /* TreePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DDB9A2201C8CAC00B82E59 /* TreePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		96437E74200782BA00752AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965334F6202173D60054CF6B /* WebListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebListTableViewController.swift; sourceTree = "<group>"; };
 		965334F8202180BE0054CF6B /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		965334FA202185750054CF6B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		96DDB9A2201C8CAC00B82E59 /* TreePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				965334F8202180BE0054CF6B /* ThirdViewController.swift */,
 				965334F6202173D60054CF6B /* WebListTableViewController.swift */,
 				96437E6F200782BA00752AA4 /* Assets.xcassets */,
+				965334FA202185750054CF6B /* MyTabBarController.swift */,
 				96437E71200782BA00752AA4 /* LaunchScreen.storyboard */,
 				96437E74200782BA00752AA4 /* Info.plist */,
 			);
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96437E6B200782BA00752AA4 /* ViewController.swift in Sources */,
+				965334FB202185750054CF6B /* MyTabBarController.swift in Sources */,
 				962F6021200F6E97001035F9 /* GameProtocol.swift in Sources */,
 				965334F7202173D60054CF6B /* WebListTableViewController.swift in Sources */,
 				965334F9202180BE0054CF6B /* ThirdViewController.swift in Sources */,

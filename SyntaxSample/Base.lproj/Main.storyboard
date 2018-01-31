@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1666" y="-1662"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="mbL-iK-URq">
             <objects>
-                <tabBarController id="dlr-fL-Iw5" sceneMemberID="viewController">
+                <tabBarController id="dlr-fL-Iw5" customClass="MyTabBarController" customModule="SyntaxSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HcP-ja-MNJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
