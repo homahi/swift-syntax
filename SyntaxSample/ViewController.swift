@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController  {
+class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func showAlert(_ sender: Any) {
         let alert = UIAlertController(title:nil, message: nil, preferredStyle: .alert)
@@ -29,12 +29,20 @@ class ViewController: UIViewController  {
             UIAlertAction(title: "削除します", style: .destructive, handler: {(action)->Void in
                 self.hello(action.title!)
             }))
+
+        alert.addTextField{(textField) -> Void in
+            textField.delegate = self
+            
+        }
         
         self.present(alert, animated: true, completion: {print("アラートが表示された")})
     }
     
     func hello(_ msg: String){
-        print(msg)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text ?? "")
     }
 
     override func viewDidLoad() {
