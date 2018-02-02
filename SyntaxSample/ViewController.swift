@@ -11,40 +11,47 @@ import WebKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
     
-    @IBAction func showAlert(_ sender: Any) {
-        let alert = UIAlertController(title:nil, message: nil, preferredStyle: .alert)
-        alert.title = "タイトル"
-        alert.message = "メッセージ"
-        alert.addAction(
-            UIAlertAction(title: "ボタン1です", style: .default, handler: {(action)->Void in
-                self.hello(action.title!)
-            }))
-        alert.addAction(
-            UIAlertAction(title: "ボタン2です", style: .default, handler: {(action)->Void in
-                self.hello(action.title!)
-            }))
-        alert.addAction(
-            UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
-        alert.addAction(
-            UIAlertAction(title: "削除します", style: .destructive, handler: {(action)->Void in
-                self.hello(action.title!)
-            }))
-
-        alert.addTextField{(textField) -> Void in
-            textField.delegate = self
-            
-        }
+    @IBAction func showActionSheet(_ sender: Any) {
+        // アクションシートを作る
+        let actionSheet = UIAlertController(
+            title: "タイトル",
+            message: "メッセージ文",
+            preferredStyle: .actionSheet
+        )
         
-        self.present(alert, animated: true, completion: {print("アラートが表示された")})
+        // ボタン1
+        actionSheet.addAction(
+            UIAlertAction(
+                title:"ボタン1です",
+                style: .default,
+                handler: {(action) -> Void in
+                    self.hello(action.title!)
+            })
+        )
+        
+        // ボタン2
+        actionSheet.addAction(UIAlertAction(title: "ボタン2です", style: .default, handler: {(action) -> Void in
+            self.hello(action.title!)
+        }))
+        
+        // キャンセル(追加順にかかわらず最後に表示される
+        actionSheet.addAction(UIAlertAction(title:"キャンセル",style:.cancel, handler: nil))
+        
+        // 赤色のボタン
+        actionSheet.addAction(
+        UIAlertAction(title: "削除します", style: .destructive, handler: {(action) -> Void in
+            self.hello(action.title!)
+        }))
+        
+        // アクションシートを表示する
+        self.present(actionSheet,animated:true, completion:{
+            print("アクションシートが表示された。")
+        })
     }
     
-    func hello(_ msg: String){
+    func hello(_ msg:String){
+        print(msg)
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text ?? "")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

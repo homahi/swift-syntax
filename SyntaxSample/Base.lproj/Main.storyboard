@@ -108,7 +108,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="showAlert:" destination="wwa-l1-iz6" eventType="touchUpInside" id="anS-WB-9xL"/>
+                                    <action selector="showActionSheet:" destination="wwa-l1-iz6" eventType="touchUpInside" id="VET-Hp-YAB"/>
                                 </connections>
                             </button>
                         </subviews>
