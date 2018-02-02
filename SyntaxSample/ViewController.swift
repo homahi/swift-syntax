@@ -71,28 +71,28 @@ class ViewController: UIViewController {
         let size = view.bounds.size
         UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
         
+        let percent = 58.2
+        
         // 円弧のパスを作る
-        let center = CGPoint(x: view.center.x, y:200)
-        let arcPath = UIBezierPath(
-            arcCenter: CGPoint(x: view.center.x, y: 200),
-            radius: 80.0,
-            startAngle: CGFloat(-Double.pi/2),
-            endAngle: CGFloat(Double.pi*4/3),
-            clockwise: true)
-        
-        // 中心まで直線のパスを追加する
-        arcPath.addLine(to: center)
-        // パスを閉じる
-        arcPath.close()
-        
-        // パスをぬる
-        UIColor.cyan.setFill()
-        arcPath.fill()
-        // パスを描く
-        arcPath.lineWidth = 5
+        UIColor.red.setStroke()
+        let arcPath = arcPercent(80, percent)
+        arcPath.lineWidth = 60
         arcPath.lineCapStyle = .butt
+        
+        // パスを平行移動する
+        let tf = CGAffineTransform(translationX: view.center.x, y: view.center.y)
+        arcPath.apply(tf)
         arcPath.stroke()
-
+        
+        // 何％の数字を描く
+        let font = UIFont.boldSystemFont(ofSize: 28)
+        let textFontAttributes = [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.gray]
+        let drawString = String(percent) + "%"
+        let posX = view.center.x - 45
+        let posY = view.center.y - 15
+        
+        let rect  = CGRect(x: posX, y:posY, width: 90, height:30)
+        drawString.draw(in: rect, withAttributes: textFontAttributes)
         // イメージコンテキストからUIImageを作る
         let image = UIGraphicsGetImageFromCurrentImageContext()
         // イメージ処理の終了
@@ -100,6 +100,18 @@ class ViewController: UIViewController {
         return image!
         
     }
+    
+    func arcPercent(_ radius: CGFloat, _ percent:Double) -> UIBezierPath{
+        let endAngle = 2*Double.pi*percent/100 - Double.pi/2
+        let path = UIBezierPath(
+            arcCenter: CGPoint(x:0, y:0),
+            radius: radius,
+            startAngle: CGFloat(-Double.pi/2),
+            endAngle: CGFloat(endAngle),
+            clockwise: percent > 0)
+        return path
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
