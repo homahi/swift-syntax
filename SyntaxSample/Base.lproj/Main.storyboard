@@ -102,32 +102,22 @@
                     <view key="view" contentMode="scaleToFill" id="fLP-IM-oFy" customClass="ViewControlelr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="LeL-fc-4OZ">
-                                <rect key="frame" x="79" y="187" width="116" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="e57-kW-2T2" appends="YES" id="Yg0-hd-RJs"/>
-                                </connections>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="ic8-oT-DKM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3Qy-Yz-lnP" appends="YES" id="dEU-Y9-uxn"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na6-1x-Gxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="e57-kW-2T2">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3Qy-Yz-lnP">
                     <connections>
-                        <action selector="dragging:" destination="wwa-l1-iz6" id="YpO-Hg-wul"/>
+                        <action selector="dragColor:" destination="wwa-l1-iz6" id="6x6-Wn-Nnx"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="-926.08695652173924"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="homahi" width="400" height="400"/>
-    </resources>
 </document>
