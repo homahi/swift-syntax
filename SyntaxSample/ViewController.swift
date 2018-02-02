@@ -11,6 +11,30 @@ import WebKit
 
 class ViewController: UIViewController {
     
+    // 角丸四角形の図形イメージを作る
+    func makeRoundRectImage(width w: CGFloat, height h:CGFloat, corner r:CGFloat) -> UIImage{
+        // イメージ処理の開始
+        let size = CGSize(width: w, height: h)
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        // コンテキスト
+        let context = UIGraphicsGetCurrentContext()
+        
+        // サイズを決める
+        let drawRect = CGRect(x: 0, y:0, width: w, height: h)
+        // 図形のバスを作る(角丸四角形)
+        let drawPath = UIBezierPath(roundedRect: drawRect, cornerRadius: r)
+        
+        // 塗り色
+        context?.setFillColor(red:0.8, green:0.8, blue: 0.8, alpha:1.0)
+        // パスを塗る
+        drawPath.fill()
+        
+        // イメージコンテキストからUIImageを作る
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
     func makeBoxImage(width w: CGFloat, height h:CGFloat) -> UIImage{
         // イメージ処理の開始
         let size = CGSize(width: w, height: h)
@@ -46,7 +70,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 四角形のイメージを作る
-        let boxImage = makeBoxImage(width: 240, height: 180)
+//        let boxImage = makeBoxImage(width: 240, height: 180)
+        let boxImage = makeRoundRectImage(width: 240, height: 180, corner: 30)
 
         // イメージビューに設定する
         let boxView = UIImageView(image: boxImage)
