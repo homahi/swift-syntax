@@ -11,50 +11,27 @@ import WebKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
     
-    @IBAction func showActionSheet(_ sender: Any) {
-        // アクションシートを作る
-        let actionSheet = UIAlertController(
-            title: "タイトル",
-            message: "メッセージ文",
-            preferredStyle: .actionSheet
-        )
-        
-        // ボタン1
-        actionSheet.addAction(
-            UIAlertAction(
-                title:"ボタン1です",
-                style: .default,
-                handler: {(action) -> Void in
-                    self.hello(action.title!)
-            })
-        )
-        
-        // ボタン2
-        actionSheet.addAction(UIAlertAction(title: "ボタン2です", style: .default, handler: {(action) -> Void in
-            self.hello(action.title!)
-        }))
-        
-        // キャンセル(追加順にかかわらず最後に表示される
-        actionSheet.addAction(UIAlertAction(title:"キャンセル",style:.cancel, handler: nil))
-        
-        // 赤色のボタン
-        actionSheet.addAction(
-        UIAlertAction(title: "削除します", style: .destructive, handler: {(action) -> Void in
-            self.hello(action.title!)
-        }))
-        
-        // アクションシートを表示する
-        self.present(actionSheet,animated:true, completion:{
-            print("アクションシートが表示された。")
-        })
-    }
-    
-    func hello(_ msg:String){
-        print(msg)
-    }
+    @IBOutlet weak var homahi: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // タイマーを作成する
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.step), userInfo: nil, repeats: true)
 
+    }
+    
+    @objc func step(){
+        // 水平方向へ移動
+        homahi.center.x += 10
+        // 右辺から外へ出たら
+        let carWidth = homahi.bounds.width
+        if homahi.center.x > (view.bounds.width + carWidth/2){
+            // 左辺の手間に戻す
+            homahi.center.x = -carWidth
+            // y座標はランダムな高さに変更
+            let viewH = view.bounds.height
+            homahi.center.y = CGFloat(arc4random_uniform(UInt32(viewH)))
+        }
     }
     
     override func didReceiveMemoryWarning() {

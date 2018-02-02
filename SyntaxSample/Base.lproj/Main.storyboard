@@ -103,22 +103,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCs-Q2-Btt">
-                                <rect key="frame" x="136" y="248" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homahi" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-2d-6oY">
+                                <rect key="frame" x="50" y="141" width="124" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="showActionSheet:" destination="wwa-l1-iz6" eventType="touchUpInside" id="VET-Hp-YAB"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ic8-oT-DKM"/>
                     </view>
+                    <connections>
+                        <outlet property="homahi" destination="2fh-2d-6oY" id="qAP-fz-kij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na6-1x-Gxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="-926"/>
+            <point key="canvasLocation" x="640.79999999999995" y="-926.08695652173924"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homahi" width="400" height="400"/>
+    </resources>
 </document>
