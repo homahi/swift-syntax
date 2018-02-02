@@ -32,14 +32,31 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         view.addSubview(flower)
         
         // アニメーション
-        UIView.animate(withDuration: 1.0,
+        UIView.animate(withDuration: 2.0,
                        delay: 0,
                        options: [.curveEaseInOut],
                        animations:{
                         flower.alpha = 1.0
-                        flower.transform = .identity
         },
-                       completion: nil)
+                       completion: {(finished:Bool) in
+                        self.fadeoutAndRemove(flower)
+        })
+    }
+    
+    func fadeoutAndRemove(_ view:UIView){
+        // フェードアウトする
+        UIView.animate(
+            withDuration: 2.0,
+            delay: 3.0,
+            options: UIViewAnimationOptions(),
+            animations: {
+                view.alpha = 0.0
+        },
+            completion:{(finished:Bool) in
+                // ビューから取り除く
+                view.removeFromSuperview()
+        })
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
