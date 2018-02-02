@@ -11,23 +11,34 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    @IBAction func getList(_ sender: Any) {
-        // ユーザーデフォルトを参照する
-        let defaults = UserDefaults.standard
-        // キー"myList"の値を配列として読み込む
-        if let theList = defaults.array(forKey: "myList"){
-            print(theList)
+    @IBOutlet weak var textView1: UITextView!
+    @IBOutlet weak var textView2: UITextView!
+    
+    @IBAction func saveToFile(_ sender: Any) {
+        // キーボードを下げる
+        view.endEditing(true)
+        // 保存するテキストデータ
+        let textData = textView1.text
+        // テキストデータの保存をトライする
+        do {
+            try textData?.write(toFile: thePath, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError{
+            
         }
-        
     }
+    @IBAction func readFromFile(_ sender: Any) {
+        do {
+            let textData = try String(contentsOfFile: thePath, encoding: String.Encoding.utf8)
+            textView2.text = textData
+        } catch let error as NSError {
+            textView2.text = "読み込みに失敗。\n \(error)"
+        }
+    }
+    let thePath = NSHomeDirectory() + "/Documents/myTextfile.txt"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 配列を作る
-        let list = [1,2,3]
-        // ユーザーデフォルトを参照する
-        let defaults = UserDefaults.standard
-        defaults.set(list, forKey: "myList")
     }
     
     override func didReceiveMemoryWarning() {
