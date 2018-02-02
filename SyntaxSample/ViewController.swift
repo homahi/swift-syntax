@@ -11,17 +11,24 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    @IBAction func tapHomahi(_ sender: UITapGestureRecognizer) {
-        // タップされたとんぼ
-        let tombo = sender.view!
-        // 画面のランダムな座標に移動する
-        let newX = arc4random_uniform(UInt32(view.frame.width))
-        let newY = arc4random_uniform(UInt32(view.frame.height))
-        tombo.center = CGPoint(x: Double(newX), y: Double(newY))
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action : #selector(self.hello(_:)))
+        // ビューを作る
+        let myView = UIView(frame: CGRect(x: 100, y: 100, width: 80, height:80))
+        myView.backgroundColor = UIColor.green
+        // tagに番号をつける
+        myView.tag = 1
+        // ビューにタップジェスチャーレコグナイザを追加する
+        myView.addGestureRecognizer(tapGesture)
+        view.addSubview(myView)
+    }
+    
+    @objc func hello(_ sender:UITapGestureRecognizer){
+        // tagの番号を調べる
+        let tagNo = sender.view?.tag
+        print("ハロー", tagNo!)
     }
     
     
