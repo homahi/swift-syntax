@@ -12,30 +12,19 @@ import WebKit
 class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func tabView(_ sender: UITapGestureRecognizer) {
+        // タップされた座標を調べる
+        let tapPoint = sender.location(in: view)
+        
+        // 指定した最終値になるようにアニメーションする
+        UIView.animate(withDuration: 1.0, delay: 0, options:[.curveEaseInOut], animations: {self.homahi.center = tapPoint}, completion: nil)
     }
     @IBOutlet weak var homahi: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // タイマーを作成する
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.step), userInfo: nil, repeats: true)
+    }
+    
 
-    }
-    
-    @objc func step(){
-        // 水平方向へ移動
-        homahi.center.x += 10
-        // 右辺から外へ出たら
-        let carWidth = homahi.bounds.width
-        if homahi.center.x > (view.bounds.width + carWidth/2){
-            // 左辺の手間に戻す
-            homahi.center.x = -carWidth
-            // y座標はランダムな高さに変更
-            let viewH = view.bounds.height
-            homahi.center.y = CGFloat(arc4random_uniform(UInt32(viewH)))
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
