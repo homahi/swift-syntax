@@ -72,16 +72,27 @@ class ViewController: UIViewController {
         UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
         
         // 円弧のパスを作る
+        let center = CGPoint(x: view.center.x, y:200)
         let arcPath = UIBezierPath(
             arcCenter: CGPoint(x: view.center.x, y: 200),
             radius: 80.0,
-            startAngle: 0.0,
-            endAngle: CGFloat(Double.pi*5/3),
+            startAngle: CGFloat(-Double.pi/2),
+            endAngle: CGFloat(Double.pi*4/3),
             clockwise: true)
-        arcPath.lineWidth = 40
-        arcPath.lineCapStyle = .round
-        arcPath.stroke()
         
+        // 中心まで直線のパスを追加する
+        arcPath.addLine(to: center)
+        // パスを閉じる
+        arcPath.close()
+        
+        // パスをぬる
+        UIColor.cyan.setFill()
+        arcPath.fill()
+        // パスを描く
+        arcPath.lineWidth = 5
+        arcPath.lineCapStyle = .butt
+        arcPath.stroke()
+
         // イメージコンテキストからUIImageを作る
         let image = UIGraphicsGetImageFromCurrentImageContext()
         // イメージ処理の終了
