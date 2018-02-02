@@ -65,6 +65,30 @@ class ViewController: UIViewController {
         
         return image!
     }
+    
+    func drawLine() -> UIImage{
+        // イメージ処理の開始
+        let size = view.bounds.size
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        
+        // 円弧のパスを作る
+        let arcPath = UIBezierPath(
+            arcCenter: CGPoint(x: view.center.x, y: 200),
+            radius: 80.0,
+            startAngle: 0.0,
+            endAngle: CGFloat(Double.pi*5/3),
+            clockwise: true)
+        arcPath.lineWidth = 40
+        arcPath.lineCapStyle = .round
+        arcPath.stroke()
+        
+        // イメージコンテキストからUIImageを作る
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        // イメージ処理の終了
+        UIGraphicsEndImageContext()
+        return image!
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +102,11 @@ class ViewController: UIViewController {
         // 画面に表示する
         boxView.center = view.center
         view.addSubview(boxView)
+        
+        let drawImage = drawLine()
+        let drawView = UIImageView(image: drawImage)
+        // 画面に表示する
+        view.addSubview(drawView)
     }
     
     override func didReceiveMemoryWarning() {
