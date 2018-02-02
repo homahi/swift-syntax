@@ -106,12 +106,16 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="ic8-oT-DKM"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="kg1-go-lv1" appends="YES" id="jgr-1a-SKn"/>
+                            <outletCollection property="gestureRecognizers" destination="mnX-bn-rKf" appends="YES" id="xr5-eK-YeX"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na6-1x-Gxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kg1-go-lv1"/>
+                <tapGestureRecognizer id="mnX-bn-rKf">
+                    <connections>
+                        <action selector="tapView:" destination="wwa-l1-iz6" id="Sdo-wM-DSs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="-926.08695652173924"/>
         </scene>
