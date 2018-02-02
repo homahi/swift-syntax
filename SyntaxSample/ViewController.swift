@@ -11,6 +11,8 @@ import WebKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
     
+    @IBAction func tabView(_ sender: UITapGestureRecognizer) {
+    }
     @IBOutlet weak var homahi: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()

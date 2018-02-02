@@ -109,13 +109,22 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="ic8-oT-DKM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kg1-go-lv1" appends="YES" id="jgr-1a-SKn"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="homahi" destination="2fh-2d-6oY" id="qAP-fz-kij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na6-1x-Gxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kg1-go-lv1">
+                    <connections>
+                        <action selector="tabView:" destination="wwa-l1-iz6" id="OYN-B9-FXs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="-926.08695652173924"/>
         </scene>
