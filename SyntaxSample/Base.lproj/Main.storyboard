@@ -102,6 +102,32 @@
                     <view key="view" contentMode="scaleToFill" id="fLP-IM-oFy" customClass="ViewControlelr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CjK-rv-DMx">
+                                <rect key="frame" x="140" y="177" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8K-XF-JDG">
+                                <rect key="frame" x="140" y="285" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNJ-C3-XVr">
+                                <rect key="frame" x="149" y="240" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="read"/>
+                                <connections>
+                                    <action selector="readStatus:" destination="wwa-l1-iz6" eventType="touchUpInside" id="1Cd-ab-MMK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wT-d2-pdw">
+                                <rect key="frame" x="148" y="124" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveStatus:" destination="wwa-l1-iz6" eventType="touchUpInside" id="3W7-jn-PhS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="ic8-oT-DKM"/>
@@ -109,6 +135,10 @@
                             <outletCollection property="gestureRecognizers" destination="z9A-9e-C3j" appends="YES" id="Ime-vn-8el"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="mySwitch1" destination="CjK-rv-DMx" id="b7A-2a-zc3"/>
+                        <outlet property="mySwitch2" destination="X8K-XF-JDG" id="T4c-pg-RW6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na6-1x-Gxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <rotationGestureRecognizer id="z9A-9e-C3j">
