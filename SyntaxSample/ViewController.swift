@@ -11,35 +11,76 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textView1: UITextView!
-    @IBOutlet weak var textView2: UITextView!
-    
+    let thePath = NSHomeDirectory() + "/Documents/myTextfile.txt"
+    // テキストビューのframe
+    var originalFrame: CGRect?
+    // テキストビューとOutlet接続する
+    @IBOutlet weak var myTextView: UITextView!
+    @IBAction func cancel(_ sender: Any) {
+        view.endEditing(true)
+        readFromFile()
+    }
     @IBAction func saveToFile(_ sender: Any) {
         // キーボードを下げる
         view.endEditing(true)
         // 保存するテキストデータ
-        let textData = textView1.text
+        let textData = myTextView.text
         // テキストデータの保存をトライする
-        do {
+        do{
             try textData?.write(toFile: thePath, atomically: true, encoding: String.Encoding.utf8)
         } catch let error as NSError{
-            
+            print("保存に失敗。 \n \(error)")
         }
     }
-    @IBAction func readFromFile(_ sender: Any) {
-        do {
+    
+    func readFromFile(){
+        do{
             let textData = try String(contentsOfFile: thePath, encoding: String.Encoding.utf8)
-            textView2.text = textData
-        } catch let error as NSError {
-            textView2.text = "読み込みに失敗。\n \(error)"
+            myTextView.text = textData
+        } catch let error as NSError{
+            print("読み込みに失敗。 \n \(error)")
         }
     }
-    let thePath = NSHomeDirectory() + "/Documents/myTextfile.txt"
+    
+    override func viewDidAppear(_ animated: Bool) {
+        originalFrame = myTextView.frame
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        readFromFile()
+        
+        let notification = NotificationCenter.default
+        
+        notification.addObserver(self, selector: #selector(ViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        
+        // キーボードのframeが変更された
+        notification.addObserver(self, selector: #selector(ViewController.keyboardChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        
+        // キーボードが退場した
+        notification.addObserver(self, selector: #selector(ViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
+    
+    @objc func keyboardDidShow(_ notification: Notification){
+        
+    }
+    
+    @objc func keyboardChangeFrame(_ notification: Notification){
+        let userInfo = (notification as NSNotification).userInfo!
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        // キーボードで隠れないようにテキストビューの高さを変更する
+        var textViewFrame = myTextView.frame
+        textViewFrame.size.height = keyboardFrame.minY - textViewFrame.minY - 5
+        myTextView.frame = textViewFrame
+    }
+    
+    @objc func keyboardDidHide(_ notificaiton: Notification){
+        myTextView.frame = originalFrame!
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
