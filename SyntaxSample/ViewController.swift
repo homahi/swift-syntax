@@ -11,17 +11,24 @@ import WebKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
     
-    @IBAction func tabView(_ sender: UITapGestureRecognizer) {
-        // タップされた座標を調べる
-        let tapPoint = sender.location(in: view)
-        
-        // 指定した最終値になるようにアニメーションする
-        UIView.animate(withDuration: 1.0, delay: 0, options:[.curveEaseInOut], animations: {self.homahi.center = tapPoint}, completion: nil)
-    }
-    @IBOutlet weak var homahi: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // アザラシをビューに追加する
+        let homahi = UIImageView(image: UIImage(named:"homahi"))
+        homahi.center = CGPoint(x:50, y:150)
+        view.addSubview(homahi)
+        
+        // 画面を横に行ったり来たりする
+        UIView.animate(withDuration: 1.0,
+                       delay:0,
+                       options:[.curveEaseInOut,
+                                .autoreverse,
+                                .repeat],
+                       animations:{
+                        homahi.center.x = self.view.frame.width - 50
+        },
+                       completion:nil)
     }
     
 
