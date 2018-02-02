@@ -11,21 +11,23 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var mySwitch1: UISwitch!
-    @IBOutlet weak var mySwitch2: UISwitch!
-    @IBAction func saveStatus(_ sender: Any) {
+    @IBAction func getList(_ sender: Any) {
+        // ユーザーデフォルトを参照する
         let defaults = UserDefaults.standard
-        // mySitch1の値をキー"switchOn"で保存する
-        defaults.set(mySwitch1.isOn, forKey: "switchOn")
-    }
-    @IBAction func readStatus(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        // キー"switchOn"の値をBoolとして読んでmySwitch2に設定する
-        mySwitch2.isOn = defaults.bool(forKey: "switchOn")
+        // キー"myList"の値を配列として読み込む
+        if let theList = defaults.array(forKey: "myList"){
+            print(theList)
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 配列を作る
+        let list = [1,2,3]
+        // ユーザーデフォルトを参照する
+        let defaults = UserDefaults.standard
+        defaults.set(list, forKey: "myList")
     }
     
     override func didReceiveMemoryWarning() {
